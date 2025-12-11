@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHLINKS - Website Developer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Using utility classes for contact cards now, so removed the custom class */
+        }
+        /* Custom styles for the responsive icons/buttons */
+        .nav-item {
+            display: flex;
+            align-items: center;
+            transition: all 200ms ease;
+            cursor: pointer;
+            padding: 0.75rem; /* p-3 */
+            border-radius: 0.75rem; /* rounded-xl */
+            font-weight: 600; /* font-semibold */
+            text-decoration: none; /* Ensure links don't have underlines */
+        }
+        .nav-item-mobile {
+            flex: 1;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.25rem; /* space-y-1 */
+        }
+        .nav-item-desktop {
+            flex-direction: row;
+            gap: 0.5rem; /* space-x-2 */
+        }
+        .nav-link {
+             /* This class is now unused since desktop nav was removed, but kept for consistency */
+             @apply text-gray-500 hover:text-indigo-600 hover:bg-gray-100 transition-colors p-3 rounded-xl font-semibold;
+        }
+        .nav-link.active, .nav-item-active {
+            color: #4338ca; /* text-indigo-700 */
+            background-color: #eef2ff; /* bg-indigo-100 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+            outline: 2px solid rgba(99, 102, 241, 0.5); /* ring-2 ring-indigo-500/50 */
+        }
+        /* The .contact-btn-card class definition was removed and utility classes applied directly for modernization */
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Overlay (Backdrop) - Hidden initially -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Sidebar Menu - Hidden initially -->
+    <aside id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-bold text-indigo-700">Navigation</h3>
+            <button id="sidebar-close-button" class="p-2 rounded-full text-gray-600 hover:bg-gray-100 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+        
+        <nav id="sidebar-nav" class="flex flex-col space-y-2">
+            <!-- Sidebar links - using nav-item-desktop classes for vertical layout -->
+            <a href="#home" class="nav-item nav-item-desktop active" data-name="Home">
+                <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                <span>Home</span>
+            </a>
+            <a href="#services" class="nav-item nav-item-desktop nav-item-inactive" data-name="Services">
+                <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span>
+                <span>Services</span>
+            </a>
+            <a href="#projects" class="nav-item nav-item-desktop nav-item-inactive" data-name="Projects">
+                <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg></span>
+                <span>Projects</span>
+            </a>
+            <a href="#contact" class="nav-item nav-item-desktop nav-item-inactive" data-name="Contact">
+                <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.06 0L2 7"/></svg></span>
+                <span>Contact</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main container setup for full-screen, responsive layout -->
+    <div id="app" class="min-h-screen flex flex-col bg-gray-50 antialiased">
+        
+        <!-- Header/Navigation Bar (Fixed to Top) -->
+        <header class="bg-white shadow-md p-4 sticky top-0 z-20">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Hamburger Button -->
+                    <button id="menu-button" class="p-2 rounded-xl text-gray-600 hover:bg-gray-100 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    </button>
+
+                    <!-- Logo/Title (Top Left Corner Button) -->
+                    <a href="#home" class="text-2xl font-bold text-indigo-700 hover:text-indigo-900 transition-colors">
+                       TECHLINKS
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Container (Removed as requested) -->
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="flex-grow max-w-7xl mx-auto w-100 p-4 sm:p-6 lg:p-8 mb-20 md:mb-0">
+            
+            <!-- --------------------------------- HOME SECTION --------------------------------- -->
+            <section id="home" class="min-h-[80vh] flex flex-col justify-center bg-white p-6 rounded-xl  shadow-lg border border-gray-100 mb-10 pt-16">
+                <h2 class="text-5xl font-extrabold text-gray-900 mb-4">Hi, I'm a Professional Developer</h2>
+                <p class="text-gray-700 text-xl mb-10 max-w-5xl">
+                    Welcome to my portfolio. I am a dedicated professional specializing in creating high-quality digital experiences. I bring clarity and efficiency to every project, ensuring your vision is executed perfectly across Website Development, App Development, and Graphic Design.
+                </p>
+                <a href="#services" class="w-fit px-8 py-3 bg-indigo-600 text-white font-bold rounded-full shadow-lg hover:bg-indigo-700 transition-all transform hover:scale-[1.02]">
+                    Explore My Services
+                </a>
+            </section>
+
+            <!-- --------------------------------- SERVICES SECTION --------------------------------- -->
+            <section id="services" class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mb-10 pt-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-2">Services</h2>
+                <p class="text-gray-600 text-lg mb-8">I offer a range of professional services to help you establish a powerful digital presence.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Service Card 1: Website Development -->
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-200 shadow-lg text-center transform hover:scale-[1.02] transition-transform duration-300">
+                        <div class="text-indigo-600 mb-3 mx-auto" style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="4" rx="2"/><path d="M2 11h20"/><line x1="10" x2="14" y1="17" y2="17"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-indigo-800 mb-2">Website Development</h3>
+                        <p class="text-sm text-indigo-700">Crafting responsive, fast, and SEO-friendly websites that drive results and look amazing on any device (HTML, JS, React, Angular).</p>
+                    </div>
+
+                    <!-- Service Card 2: App Development -->
+                    <div class="bg-green-50 p-6 rounded-xl border border-green-200 shadow-lg text-center transform hover:scale-[1.02] transition-transform duration-300">
+                        <div class="text-green-600 mb-3 mx-auto" style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-800 mb-2">App Development</h3>
+                        <p class="text-sm text-green-700">Building intuitive and high-performance mobile and cross-platform applications to extend your reach and user base.</p>
+                    </div>
+
+                    <!-- Service Card 3: Graphic Design -->
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200 shadow-lg text-center transform hover:scale-[1.02] transition-transform duration-300">
+                        <div class="text-yellow-600 mb-3 mx-auto" style="width: 48px; height: 48px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 15.5l-10-10c-1.26-.06-2.92.36-3.5 1s.36 2.24 1 3.5l10 10c1.26.06 2.92-.36 3.5-1s-.36-2.24-1-3.5z"/><path d="m21 16-4.5-4.5"/><path d="m19 18-2-2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-yellow-800 mb-2">Graphic Design</h3>
+                        <p class="text-sm text-yellow-700">Creating stunning visual identities, branding, and marketing materials that capture attention and communicate value.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- --------------------------------- PROJECTS SECTION --------------------------------- -->
+            <section id="projects" class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mb-10 pt-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-2">Selected Projects</h2>
+                <p class="text-gray-600 text-lg mb-8">A look at some of the recent work I've delivered for clients across different industries.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Project Card 1: HTML/CSS/JS (Interactive Calculator) -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-2">Interactive Calculator Web App</h3>
+                        <p class="text-gray-600 mb-4">Built a functional, responsive calculator using vanilla JavaScript for core logic and modern CSS for a clean, user-friendly interface.</p>
+                        <div class="flex flex-wrap gap-2 text-sm">
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full font-medium">HTML5</span>
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full font-medium">CSS3</span>
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
+                            <span class="bg-indigo-200 text-indigo-800 px-3 py-1 rounded-full font-medium">Responsive Design</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 2: HTML/CSS/JS (Data Dashboard) -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                        <h3 class="text-2xl font-bold text-green-700 mb-2">Data Visualization Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Created an interactive data dashboard using D3.js and modern web standards to visualize quarterly performance metrics for key stakeholders.</p>
+                        <div class="flex flex-wrap gap-2 text-sm">
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full font-medium">D3.js</span>
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full font-medium">Data Visualization</span>
+                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full font-medium">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Graphic Design (Branding) -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                        <h3 class="text-2xl font-bold text-yellow-700 mb-2">Corporate Branding Package</h3>
+                        <p class="text-gray-600 mb-4">Designed a complete corporate identity package, including logo, color palette, and typography guidelines for a technology startup.</p>
+                        <div class="flex flex-wrap gap-2 text-sm">
+                            <span class="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full font-medium">Adobe Illustrator</span>
+                            <span class="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full font-medium">Logo Design</span>
+                            <span class="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full font-medium">Branding</span>
+                            <span class="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full font-medium">Digital Assets</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: Graphic Design (Layout) -->
+                    <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                        <h3 class="text-2xl font-bold text-pink-700 mb-2">Annual Report & Magazine Layout</h3>
+                        <p class="text-gray-600 mb-4">Professional design and typesetting for a 50-page annual report, ensuring brand consistency, high readability, and print-ready output.</p>
+                        <div class="flex flex-wrap gap-2 text-sm">
+                            <span class="bg-pink-200 text-pink-800 px-3 py-1 rounded-full font-medium">Adobe InDesign</span>
+                            <span class="bg-pink-200 text-pink-800 px-3 py-1 rounded-full font-medium">Typography</span>
+                            <span class="bg-pink-200 text-pink-800 px-3 py-1 rounded-full font-medium">Layout Design</span>
+                            <span class="bg-pink-200 text-pink-800 px-3 py-1 rounded-full font-medium">Print Production</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- --------------------------------- CONTACT SECTION --------------------------------- -->
+            <section id="contact" class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mb-10 pt-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-2">Contact Me</h2>
+                <p class="text-gray-600 text-lg mb-8">
+                    Ready to start a project? Reach out directly using the options below. I aim to respond quickly.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-8 justify-center">
+                    
+                    <!-- Call Card (Updated padding: p-6, and width: sm:w-96) -->
+                    <a href="tel:+233530293161" class="flex flex-col items-center justify-center p-6 rounded-3xl shadow-2xl transition-all duration-300 transform hover:shadow-indigo-500/50 hover:shadow-3xl hover:-translate-y-1 hover:ring-4 ring-offset-2 ring-indigo-500 bg-indigo-600 text-white h-10 w-full sm:w-96">
+                        <span class="w-10 h-10 mb-2" id="call-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </span>
+                    </a>
+
+                    <!-- WhatsApp Card (Updated padding: p-6, and width: sm:w-96) -->
+                    <a href="https://wa.me/233530293161" target="_blank" class="flex flex-col items-center justify-center p-6 rounded-3xl shadow-2xl transition-all duration-300 transform hover:shadow-green-500/50 hover:shadow-3xl hover:-translate-y-1 hover:ring-4 ring-offset-2 ring-green-500 bg-green-500 text-black h-10 w-full sm:w-96" >
+                        <span class="w-10 h-10 mb-2" id="whatsapp-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </span>
+                    </a>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- Fixed Mobile Navigation (Bottom) - Hidden on desktop -->
+        <nav id="mobile-bottom-nav" class="fixed bottom-0 left-0 w-full md:hidden bg-white border-t border-gray-200 z-30 shadow-2xl">
+            <div class="flex justify-around p-2">
+                <a href="#home" class="nav-item nav-item-mobile nav-item-active" data-name="Home">
+                    <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+                    <span class="text-xs">Home</span>
+                </a>
+                <a href="#services" class="nav-item nav-item-mobile nav-item-inactive" data-name="Services">
+                    <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></span>
+                    <span class="text-xs">Services</span>
+                </a>
+                <a href="#projects" class="nav-item nav-item-mobile nav-item-inactive" data-name="Projects">
+                    <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg></span>
+                    <span class="text-xs">Projects</span>
+                </a>
+                <a href="#contact" class="nav-item nav-item-mobile nav-item-inactive" data-name="Contact">
+                    <span class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.83 1.83 0 0 1-2.06 0L2 7"/></svg></span>
+                    <span class="text-xs">Contact</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- FOOTER -->
+        <footer class="mt-auto bg-gray-800 text-white p-6 md:p-8 shadow-inner z-10">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                
+                <!-- Branding and Contact Snippet -->
+                <div class="text-sm text-gray-400 text-center md:text-left">
+                    &copy; 2025 TECHLINKS. All rights reserved. 
+                    <span class="block mt-1">Ready for your next digital project.</span>
+                </div>
+
+                <!-- Quick Contact Links -->
+                <div class="flex space-x-6 text-sm">
+                    <a href="tel:+233530293161" class="text-gray-300 hover:text-indigo-400 transition-colors flex items-center space-x-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>Call</span>
+                    </a>
+                    <a href="https://wa.me/233530293161" target="_blank" class="text-gray-300 hover:text-indigo-400 transition-colors flex items-center space-x-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // DOM Elements
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        const sections = document.querySelectorAll('main section');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        const menuButton = document.getElementById('menu-button');
+        const sidebarCloseButton = document.getElementById('sidebar-close-button');
+        const mobileBottomNav = document.getElementById('mobile-bottom-nav');
+        let isSidebarOpen = false;
+
+        // Function to set the active navigation link visually
+        function setActiveLink(name) {
+            document.querySelectorAll('.nav-link, .nav-item').forEach(link => {
+                link.classList.remove('active', 'nav-item-active');
+                link.classList.add('nav-item-inactive');
+                
+                if (link.getAttribute('data-name') === name) {
+                    link.classList.add('active', 'nav-item-active');
+                    link.classList.remove('nav-item-inactive');
+                }
+            });
+        }
+
+        // Function to toggle the sidebar visibility
+        function toggleSidebar(open) {
+            isSidebarOpen = (typeof open === 'boolean') ? open : !isSidebarOpen;
+
+            if (isSidebarOpen) {
+                // Show sidebar and overlay
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10); // Start opacity transition after display block
+                
+                // Hide mobile bottom nav for cleaner look
+                mobileBottomNav.classList.add('hidden');
+                
+            } else {
+                // Hide sidebar and overlay
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+
+                // Wait for transform/opacity transition (300ms) to finish before setting display: none
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    // Show mobile bottom nav again if on a mobile screen
+                    if (window.innerWidth < 768) { 
+                        mobileBottomNav.classList.remove('hidden');
+                    }
+                }, 300); 
+            }
+        }
+        
+        // Set active link based on scroll position
+        function onScroll() {
+            let current = 'home';
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            sections.forEach(section => {
+                // Determine section position relative to viewport, adjusted for sticky header
+                const sectionTop = section.offsetTop - headerHeight - 20; 
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // Update navigation links
+            setActiveLink(current.charAt(0).toUpperCase() + current.slice(1));
+
+            // Ensure mobile bottom nav visibility logic handles desktop sizes correctly
+            if (window.innerWidth >= 768) {
+                 mobileBottomNav.classList.add('hidden');
+            } else if (!isSidebarOpen) {
+                 mobileBottomNav.classList.remove('hidden');
+            }
+        }
+
+        // Add listeners for opening and closing
+        menuButton.addEventListener('click', () => toggleSidebar(true));
+        sidebarCloseButton.addEventListener('click', () => toggleSidebar(false));
+        overlay.addEventListener('click', () => toggleSidebar(false));
+
+        // Add scroll listener and initial state setup
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('load', onScroll); 
+        window.addEventListener('resize', onScroll); // Handle resize/orientation change
+
+        // Handle click event for smooth scroll and immediate active state update
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetName = this.getAttribute('data-name');
+                if (targetName) {
+                    // Immediately update state on click
+                    setActiveLink(targetName);
+                    
+                    // Close sidebar if the clicked link is inside it
+                    if (this.closest('#sidebar')) {
+                        // Use a slight delay to allow smooth scrolling to start before closing
+                        setTimeout(() => toggleSidebar(false), 100); 
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
