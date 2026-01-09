@@ -20,10 +20,10 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#0f172a',
-                            primary: '#6366f1',
-                            secondary: '#ec4899',
-                            accent: '#8b5cf6'
+                            dark: '#ffffff',      /* Pure White Background */
+                            primary: '#000000',   /* Pure Black Text/Accents */
+                            secondary: '#52525b', /* Zinc 600 */
+                            accent: '#a1a1aa'     /* Zinc 400 */
                         }
                     },
                     animation: {
@@ -54,24 +54,25 @@
         }
     </script>
     <style>
-        /* Custom Utilities */
+        /* Custom Utilities - Inverted for Light Theme */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(0, 0, 0, 0.03); /* Subtle dark tint on white */
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.08); /* Dark border */
             transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
         }
         
         /* Make glass card stand out more on mobile */
         @media (max-width: 768px) {
             .glass-card {
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.15);
+                background: rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(0, 0, 0, 0.12);
             }
         }
 
         .gradient-text {
-            background: linear-gradient(to right, #6366f1, #ec4899, #8b5cf6);
+            /* Black to Gray Gradient */
+            background: linear-gradient(to right, #000000, #52525b, #a1a1aa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -87,9 +88,9 @@
 
         .blob {
             position: absolute;
-            filter: blur(80px);
+            filter: blur(100px);
             z-index: -1;
-            opacity: 0.4;
+            opacity: 0.10; 
             animation: float 10s infinite alternate;
         }
 
@@ -116,7 +117,8 @@
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            /* Inverted shimmer: white shine on black button */
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
             transform: skewX(-20deg);
             animation: shimmer 3s infinite;
         }
@@ -127,94 +129,94 @@
         }
     </style>
 </head>
-<body class="bg-brand-dark text-white font-sans overflow-x-hidden selection:bg-brand-secondary selection:text-white">
+<body class="bg-white text-black font-sans overflow-x-hidden selection:bg-black selection:text-white">
 
     <!-- Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
         <div class="container mx-auto px-4 py-3 md:py-4">
-            <div class="flex justify-between items-center glass-card rounded-full px-5 py-3 shadow-lg shadow-brand-primary/10">
+            <div class="flex justify-between items-center glass-card rounded-full px-5 py-3 shadow-lg shadow-black/5">
                 <!-- Logo -->
                 <a href="#" class="text-xl md:text-2xl font-bold tracking-tighter flex items-center gap-2">
-                    <div class="w-8 h-8 bg-gradient-to-tr from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center animate-pulse-slow">
+                    <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center animate-pulse-slow">
                         <i class="fa-solid fa-link text-white text-sm"></i>
                     </div>
-                    <span>TECH<span class="text-brand-primary">LINKS</span></span>
+                    <span>TECH<span class="text-gray-600">LINKS</span></span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-all">Home</a>
-                    <a href="#services" class="text-gray-300 hover:text-white transition-all">Services</a>
-                    <a href="#portfolio" class="text-gray-300 hover:text-white transition-all">Work</a>
-                    <a href="#contact" class="shimmer-btn px-6 py-2 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full text-white font-medium hover:shadow-lg hover:shadow-brand-primary/50 transition-all">
+                    <a href="#home" class="text-gray-600 hover:text-black transition-all">Home</a>
+                    <a href="#services" class="text-gray-600 hover:text-black transition-all">Services</a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-black transition-all">Work</a>
+                    <a href="#contact" class="shimmer-btn px-6 py-2 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition-all">
                         Let's Talk
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-2xl text-white focus:outline-none active:scale-95 transition-transform">
+                <button id="menu-btn" class="md:hidden text-2xl text-black focus:outline-none active:scale-95 transition-transform">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-4 right-4 glass-card rounded-2xl p-6 md:hidden flex-col space-y-4 text-center transform origin-top transition-all border border-brand-primary/20 z-50 bg-brand-dark/95 backdrop-blur-xl">
-            <a href="#home" class="block text-lg py-2 text-gray-300 hover:text-brand-primary">Home</a>
-            <a href="#services" class="block text-lg py-2 text-gray-300 hover:text-brand-primary">Services</a>
-            <a href="#portfolio" class="block text-lg py-2 text-gray-300 hover:text-brand-primary">Work</a>
-            <a href="#contact" class="block py-3 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-xl text-white font-bold text-lg shadow-lg">Contact Us</a>
+        <div id="mobile-menu" class="hidden absolute top-20 left-4 right-4 glass-card rounded-2xl p-6 md:hidden flex-col space-y-4 text-center transform origin-top transition-all border border-black/10 z-50 bg-white/95 backdrop-blur-xl shadow-xl">
+            <a href="#home" class="block text-lg py-2 text-gray-600 hover:text-black">Home</a>
+            <a href="#services" class="block text-lg py-2 text-gray-600 hover:text-black">Services</a>
+            <a href="#portfolio" class="block text-lg py-2 text-gray-600 hover:text-black">Work</a>
+            <a href="#contact" class="block py-3 bg-black text-white rounded-xl font-bold text-lg shadow-lg">Contact Us</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <!-- Background Blobs - Increased opacity for mobile visibility -->
-        <div class="blob bg-purple-600 w-64 h-64 md:w-96 md:h-96 rounded-full top-0 left-0 mix-blend-screen opacity-40"></div>
-        <div class="blob bg-pink-600 w-64 h-64 md:w-80 md:h-80 rounded-full bottom-0 right-0 animation-delay-2000 mix-blend-screen opacity-40"></div>
-        <div class="blob bg-blue-600 w-48 h-48 md:w-64 md:h-64 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mix-blend-screen opacity-30"></div>
+        <!-- Background Blobs - Inverted to Dark Blobs on Light BG -->
+        <div class="blob bg-black w-64 h-64 md:w-96 md:h-96 rounded-full top-0 left-0 opacity-5"></div>
+        <div class="blob bg-gray-400 w-64 h-64 md:w-80 md:h-80 rounded-full bottom-0 right-0 animation-delay-2000 opacity-10"></div>
+        <div class="blob bg-zinc-400 w-48 h-48 md:w-64 md:h-64 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-10"></div>
 
         <div class="container mx-auto px-6 relative z-10 text-center">
             
             <!-- Badge -->
-            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm animate-pulse-slow">
-                <span class="text-xs md:text-sm font-medium text-brand-secondary flex items-center gap-2">
-                    <i class="fa-solid fa-rocket animate-bounce"></i> Elevating Digital Experiences
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-black/10 bg-black/5 backdrop-blur-sm animate-pulse-slow">
+                <span class="text-xs md:text-sm font-medium text-gray-600 flex items-center gap-2">
+                    <i class="fa-solid fa-rocket animate-bounce text-black"></i> Elevating Digital Experiences
                 </span>
             </div>
             
-            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight reveal">
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight reveal text-black">
                 We Build <br>
                 <!-- Continuous gradient animation -->
                 <span class="gradient-text inline-block">The Future of Tech</span>
             </h1>
             
-            <p class="text-base md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto reveal px-2" style="transition-delay: 100ms;">
+            <p class="text-base md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto reveal px-2" style="transition-delay: 100ms;">
                 Tech Links is your premier partner for cutting-edge websites, stunning graphics, and powerful mobile applications.
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center px-4 reveal" style="transition-delay: 200ms;">
-                <a href="https://wa.me/233530293161" class="shimmer-btn px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] rounded-full text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-green-900/50">
+                <a href="https://wa.me/233530293161" class="shimmer-btn px-8 py-4 bg-black hover:bg-gray-800 rounded-full text-white font-bold flex items-center justify-center gap-2 shadow-lg shadow-black/20">
                     <i class="fa-brands fa-whatsapp text-xl animate-wiggle"></i> Chat on WhatsApp
                 </a>
-                <a href="#portfolio" class="px-8 py-4 glass-card rounded-full text-white font-bold flex items-center justify-center gap-2">
+                <a href="#portfolio" class="px-8 py-4 glass-card rounded-full text-black font-bold flex items-center justify-center gap-2 hover:bg-black/5 transition-colors">
                     View Our Work <i class="fa-solid fa-arrow-right animate-pulse"></i>
                 </a>
             </div>
             
-            <!-- Floating Elements - NOW VISIBLE ON MOBILE with opacity adjusted -->
+            <!-- Floating Elements - Inverted colors -->
             <div class="absolute top-1/3 left-4 md:left-20 animate-float opacity-40 md:opacity-60 z-0 pointer-events-none">
-                <div class="glass-card p-2 md:p-3 rounded-xl rotate-12">
-                    <i class="fa-brands fa-react text-3xl md:text-5xl text-blue-400 animate-spin-slow"></i>
+                <div class="glass-card p-2 md:p-3 rounded-xl rotate-12 bg-white/50 border-black/5">
+                    <i class="fa-brands fa-react text-3xl md:text-5xl text-gray-800 animate-spin-slow"></i>
                 </div>
             </div>
             <div class="absolute bottom-1/4 right-4 md:right-20 animate-float-delayed opacity-40 md:opacity-60 z-0 pointer-events-none">
-                <div class="glass-card p-2 md:p-3 rounded-xl -rotate-12">
-                    <i class="fa-brands fa-figma text-3xl md:text-5xl text-pink-400"></i>
+                <div class="glass-card p-2 md:p-3 rounded-xl -rotate-12 bg-white/50 border-black/5">
+                    <i class="fa-brands fa-figma text-3xl md:text-5xl text-black"></i>
                 </div>
             </div>
              <div class="absolute top-1/4 right-1/4 animate-bounce-slow opacity-30 pointer-events-none">
-                <i class="fa-solid fa-code text-2xl md:text-4xl text-yellow-400"></i>
+                <i class="fa-solid fa-code text-2xl md:text-4xl text-gray-500"></i>
             </div>
         </div>
     </section>
@@ -223,51 +225,50 @@
     <section id="services" class="py-20 relative">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Our <span class="text-brand-primary">Expertise</span></h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-brand-primary to-brand-secondary mx-auto rounded-full"></div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-black">Our <span class="text-gray-500">Expertise</span></h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-black to-gray-300 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="glass-card p-8 rounded-3xl reveal relative overflow-hidden group">
-                    <!-- Icon moves automatically on mobile (animate-float) instead of hover -->
-                    <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 text-blue-400 animate-float">
+                <div class="glass-card p-8 rounded-3xl reveal relative overflow-hidden group hover:border-black/30">
+                    <div class="w-14 h-14 bg-black/5 rounded-2xl flex items-center justify-center mb-6 text-black animate-float">
                         <i class="fa-solid fa-laptop-code text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Website Development</h3>
-                    <p class="text-gray-400 mb-6">High-performance, responsive, and SEO-optimized websites tailored to your brand.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-black">Website Development</h3>
+                    <p class="text-gray-600 mb-6">High-performance, responsive, and SEO-optimized websites tailored to your brand.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Custom Code</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> CMS Solutions</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Responsive Design</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> Custom Code</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> CMS Solutions</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> Responsive Design</li>
                     </ul>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="glass-card p-8 rounded-3xl reveal relative overflow-hidden" style="transition-delay: 100ms;">
-                     <div class="w-14 h-14 bg-pink-500/20 rounded-2xl flex items-center justify-center mb-6 text-pink-400 animate-float-delayed">
+                <div class="glass-card p-8 rounded-3xl reveal relative overflow-hidden hover:border-black/30" style="transition-delay: 100ms;">
+                     <div class="w-14 h-14 bg-black/5 rounded-2xl flex items-center justify-center mb-6 text-black animate-float-delayed">
                         <i class="fa-solid fa-pen-nib text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-pink-300">Graphic Design</h3>
-                    <p class="text-gray-400 mb-6">Visual storytelling that captivates. Branding, logos, social media assets, and UI/UX design.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-black">Graphic Design</h3>
+                    <p class="text-gray-600 mb-6">Visual storytelling that captivates. Branding, logos, social media assets, and UI/UX design.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Logo Design</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Brand Identity</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Marketing Assets</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> Logo Design</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> Brand Identity</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> Marketing Assets</li>
                     </ul>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="glass-card p-8 rounded-3xl reveal relative overflow-hidden" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6 text-purple-400 animate-float">
+                <div class="glass-card p-8 rounded-3xl reveal relative overflow-hidden hover:border-black/30" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-black/5 rounded-2xl flex items-center justify-center mb-6 text-black animate-float">
                         <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-purple-300">App Development</h3>
-                    <p class="text-gray-400 mb-6">Native and cross-platform mobile applications for iOS and Android.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-black">App Development</h3>
+                    <p class="text-gray-600 mb-6">Native and cross-platform mobile applications for iOS and Android.</p>
                     <ul class="text-sm text-gray-500 space-y-2">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> iOS & Android</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> Flutter / React Native</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-green-400"></i> App Maintenance</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> iOS & Android</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> Flutter / React Native</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-black"></i> App Maintenance</li>
                     </ul>
                 </div>
             </div>
@@ -275,32 +276,32 @@
     </section>
 
     <!-- Numbers Section -->
-    <section class="py-12 bg-white/5 border-y border-white/5">
+    <section class="py-12 bg-black/5 border-y border-black/5">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="counter-section">
                 <div class="reveal">
                     <span class="text-3xl md:text-4xl font-bold gradient-text block mb-2">
                         <span class="counter" data-target="50">0</span>+
                     </span>
-                    <span class="text-xs md:text-sm text-gray-400">Projects Completed</span>
+                    <span class="text-xs md:text-sm text-gray-500">Projects Completed</span>
                 </div>
                 <div class="reveal" style="transition-delay: 100ms;">
                     <span class="text-3xl md:text-4xl font-bold gradient-text block mb-2">
                         <span class="counter" data-target="30">0</span>+
                     </span>
-                    <span class="text-xs md:text-sm text-gray-400">Happy Clients</span>
+                    <span class="text-xs md:text-sm text-gray-500">Happy Clients</span>
                 </div>
                 <div class="reveal" style="transition-delay: 200ms;">
                     <span class="text-3xl md:text-4xl font-bold gradient-text block mb-2">
                         24/7
                     </span>
-                    <span class="text-xs md:text-sm text-gray-400">Support</span>
+                    <span class="text-xs md:text-sm text-gray-500">Support</span>
                 </div>
                 <div class="reveal" style="transition-delay: 300ms;">
                     <span class="text-3xl md:text-4xl font-bold gradient-text block mb-2">
                         <span class="counter" data-target="100">0</span>%
                     </span>
-                    <span class="text-xs md:text-sm text-gray-400">Satisfaction</span>
+                    <span class="text-xs md:text-sm text-gray-500">Satisfaction</span>
                 </div>
             </div>
         </div>
@@ -309,79 +310,80 @@
     <!-- Portfolio / Work Section -->
     <section id="portfolio" class="py-20 relative overflow-hidden">
          <!-- BG Decorations -->
-         <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
+         <div class="absolute top-0 right-0 w-64 h-64 bg-black/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
                 <div>
-                    <span class="text-brand-secondary font-bold tracking-wider uppercase text-sm animate-pulse">Portfolio</span>
-                    <h2 class="text-3xl md:text-5xl font-bold mt-2">Selected <span class="text-white">Works</span></h2>
+                    <span class="text-gray-500 font-bold tracking-wider uppercase text-sm animate-pulse">Portfolio</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mt-2 text-black">Selected <span class="text-gray-500">Works</span></h2>
                 </div>
-                <a href="#" class="hidden md:inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors mt-4 md:mt-0 group">
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-black hover:text-gray-600 transition-colors mt-4 md:mt-0 group">
                     View All Projects <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project 1 -->
-                <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-brand-primary/10">
-                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-black/5">
+                    <!-- Light gray background for mockups -->
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden">
                         <!-- Mockup Placeholder -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                             <i class="fa-solid fa-shop text-6xl text-brand-primary animate-pulse-slow"></i>
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                             <i class="fa-solid fa-shop text-6xl text-black animate-pulse-slow"></i>
                         </div>
-                         <!-- Overlay - Always visible title on mobile -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 md:p-8">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">E-Commerce Platform</h3>
-                            <p class="text-brand-secondary text-sm mt-1">Web Development • UI/UX</p>
+                         <!-- Overlay - White gradient for Light theme -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end p-6 md:p-8">
+                            <h3 class="text-xl md:text-2xl font-bold text-black">E-Commerce Platform</h3>
+                            <p class="text-gray-600 text-sm mt-1">Web Development • UI/UX</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-brand-secondary/10" style="transition-delay: 100ms;">
-                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-black/5" style="transition-delay: 100ms;">
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden">
                          <!-- Mockup Placeholder -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center">
-                            <i class="fa-solid fa-mobile-screen text-6xl text-white/50 animate-pulse-slow"></i>
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                            <i class="fa-solid fa-mobile-screen text-6xl text-gray-500 animate-pulse-slow"></i>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 md:p-8">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">Fitness App</h3>
-                            <p class="text-brand-secondary text-sm mt-1">App Development • Flutter</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end p-6 md:p-8">
+                            <h3 class="text-xl md:text-2xl font-bold text-black">Fitness App</h3>
+                            <p class="text-gray-600 text-sm mt-1">App Development • Flutter</p>
                         </div>
                     </div>
                 </div>
 
                  <!-- Project 3 -->
-                 <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-pink-500/10">
-                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                 <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-black/5">
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden">
                          <!-- Mockup Placeholder -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-pink-900 to-red-900 flex items-center justify-center">
-                            <i class="fa-solid fa-palette text-6xl text-white/50 animate-pulse-slow"></i>
+                        <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                            <i class="fa-solid fa-palette text-6xl text-gray-400 animate-pulse-slow"></i>
                         </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 md:p-8">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">Brand Identity</h3>
-                            <p class="text-brand-secondary text-sm mt-1">Graphic Design • Branding</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end p-6 md:p-8">
+                            <h3 class="text-xl md:text-2xl font-bold text-black">Brand Identity</h3>
+                            <p class="text-gray-600 text-sm mt-1">Graphic Design • Branding</p>
                         </div>
                     </div>
                 </div>
 
                  <!-- Project 4 -->
-                 <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-teal-500/10" style="transition-delay: 100ms;">
-                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                 <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal shadow-2xl shadow-black/5" style="transition-delay: 100ms;">
+                    <div class="aspect-video bg-gray-200 relative overflow-hidden">
                         <!-- Mockup Placeholder -->
-                         <div class="absolute inset-0 bg-gradient-to-br from-teal-900 to-green-900 flex items-center justify-center">
-                            <i class="fa-solid fa-building text-6xl text-white/50 animate-pulse-slow"></i>
+                         <div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                            <i class="fa-solid fa-building text-6xl text-gray-500 animate-pulse-slow"></i>
                          </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 md:p-8">
-                            <h3 class="text-xl md:text-2xl font-bold text-white">Corporate Portal</h3>
-                            <p class="text-brand-secondary text-sm mt-1">Web Development</p>
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent flex flex-col justify-end p-6 md:p-8">
+                            <h3 class="text-xl md:text-2xl font-bold text-black">Corporate Portal</h3>
+                            <p class="text-gray-600 text-sm mt-1">Web Development</p>
                         </div>
                     </div>
                 </div>
             </div>
              <div class="mt-8 text-center md:hidden">
-                <a href="#" class="inline-flex items-center gap-2 text-brand-primary hover:text-white transition-colors">
+                <a href="#" class="inline-flex items-center gap-2 text-black hover:text-gray-600 transition-colors">
                     View All Projects <i class="fa-solid fa-arrow-right"></i>
                 </a>
              </div>
@@ -389,30 +391,30 @@
     </section>
 
     <!-- Why Choose Us -->
-    <section class="py-20 bg-gradient-to-b from-brand-dark to-black overflow-hidden">
+    <section class="py-20 bg-gradient-to-b from-white to-gray-100 overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="glass-card rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal border-brand-primary/20">
+            <div class="glass-card rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 reveal border-black/10">
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Why <span class="gradient-text">Tech Links?</span></h2>
-                    <p class="text-gray-400 mb-6 text-lg leading-relaxed">We don't just write code or draw pixels; we create digital assets that drive growth.</p>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-black">Why <span class="gradient-text">Tech Links?</span></h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">We don't just write code or draw pixels; we create digital assets that drive growth.</p>
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <!-- Icon pulses automatically -->
-                            <div class="w-12 h-12 rounded-full bg-brand-primary/20 flex items-center justify-center text-brand-primary mt-1 animate-pulse">
+                            <div class="w-12 h-12 rounded-full bg-black flex items-center justify-center text-white mt-1 animate-pulse">
                                 <i class="fa-solid fa-rocket text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-brand-primary">Fast Delivery</h4>
+                                <h4 class="font-bold text-lg text-black">Fast Delivery</h4>
                                 <p class="text-sm text-gray-500">We respect deadlines and deliver quality work on time.</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <!-- Icon pulses automatically -->
-                            <div class="w-12 h-12 rounded-full bg-brand-secondary/20 flex items-center justify-center text-brand-secondary mt-1 animate-pulse" style="animation-delay: 1s;">
+                            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-black mt-1 animate-pulse" style="animation-delay: 1s;">
                                 <i class="fa-solid fa-headset text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-brand-secondary">24/7 Communication</h4>
+                                <h4 class="font-bold text-lg text-gray-700">24/7 Communication</h4>
                                 <p class="text-sm text-gray-500">Always available via Phone or WhatsApp to support you.</p>
                             </div>
                         </div>
@@ -422,16 +424,16 @@
                     <!-- Decorative Graphic - Rotates slowly on its own -->
                     <div class="relative z-10 grid grid-cols-2 gap-4 animate-float">
                         <div class="space-y-4 mt-8">
-                             <div class="bg-gray-800/50 backdrop-blur-md p-4 rounded-2xl h-32 w-full animate-pulse border border-white/5"></div>
-                             <div class="bg-gray-800/50 backdrop-blur-md p-4 rounded-2xl h-48 w-full border border-brand-primary/30"></div>
+                             <div class="bg-gray-100/50 backdrop-blur-md p-4 rounded-2xl h-32 w-full animate-pulse border border-black/5"></div>
+                             <div class="bg-gray-100/50 backdrop-blur-md p-4 rounded-2xl h-48 w-full border border-black/10"></div>
                         </div>
                          <div class="space-y-4">
-                            <div class="bg-gray-800/50 backdrop-blur-md p-4 rounded-2xl h-48 w-full border border-brand-secondary/30"></div>
-                            <div class="bg-gray-800/50 backdrop-blur-md p-4 rounded-2xl h-32 w-full animate-pulse border border-white/5"></div>
+                            <div class="bg-gray-100/50 backdrop-blur-md p-4 rounded-2xl h-48 w-full border border-black/10"></div>
+                            <div class="bg-gray-100/50 backdrop-blur-md p-4 rounded-2xl h-32 w-full animate-pulse border border-black/5"></div>
                        </div>
                     </div>
                     <!-- Glow -->
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-purple-600/30 to-blue-600/30 blur-3xl -z-10 animate-pulse-slow"></div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-gray-200/30 to-zinc-200/30 blur-3xl -z-10 animate-pulse-slow"></div>
                 </div>
             </div>
         </div>
@@ -439,30 +441,40 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 relative">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 reveal">Ready to Start Your Project?</h2>
-            <p class="text-xl text-gray-400 mb-12 reveal">Get in touch with TECH LINKS today. We are just one click away.</p>
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 reveal text-black">Ready to Start Your Project?</h2>
+            <p class="text-xl text-gray-600 mb-12 reveal">Get in touch with TECH LINKS today. We are just one click away.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
-                <!-- Phone Card -->
-                <a href="tel:+233530293161" class="glass-card p-8 rounded-2xl bg-brand-primary/10 transition-all flex flex-col items-center gap-4 border-l-4 border-brand-primary animate-float">
-                    <div class="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center text-2xl shadow-lg shadow-brand-primary/50 animate-bounce-slow">
-                        <i class="fa-solid fa-phone text-white"></i>
+                <!-- Phone Card - Inverted -->
+                <a href="tel:+233530293161" class="glass-card p-6 md:px-10 md:py-8 rounded-2xl bg-white hover:bg-gray-50 transition-all flex flex-row items-center justify-between gap-4 border border-black/10 group shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-6">
+                        <div class="w-14 h-14 bg-black rounded-xl flex items-center justify-center text-2xl shadow-lg shadow-black/10 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-phone text-white"></i>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-black">Call Us</h3>
+                            <p class="text-gray-500 text-base font-mono mt-1">+233 530 293 161</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Call Us</h3>
-                        <p class="text-gray-300 mt-2 text-lg font-mono">+233 530 293 161</p>
+                    <div class="hidden md:block">
+                        <i class="fa-solid fa-arrow-right text-gray-400 group-hover:text-black group-hover:translate-x-2 transition-all"></i>
                     </div>
                 </a>
 
-                <!-- WhatsApp Card -->
-                <a href="https://wa.me/233530293161" class="glass-card p-8 rounded-2xl bg-[#25D366]/10 transition-all flex flex-col items-center gap-4 border-l-4 border-[#25D366] animate-float-delayed">
-                    <div class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-2xl shadow-lg shadow-green-600/50 animate-bounce-slow" style="animation-delay: 1.5s;">
-                        <i class="fa-brands fa-whatsapp text-white"></i>
+                <!-- WhatsApp Card - Inverted -->
+                <a href="https://wa.me/233530293161" class="glass-card p-6 md:px-10 md:py-8 rounded-2xl bg-black hover:bg-gray-900 transition-all flex flex-row items-center justify-between gap-4 border border-transparent group shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-6">
+                        <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center text-2xl shadow-lg shadow-white/20 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-brands fa-whatsapp text-black"></i>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-white">WhatsApp</h3>
+                            <p class="text-gray-400 text-base mt-1">Chat instantly</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">WhatsApp</h3>
-                        <p class="text-gray-300 mt-2 text-lg">Chat instantly</p>
+                    <div class="hidden md:block">
+                        <i class="fa-solid fa-arrow-right text-white/50 group-hover:text-white group-hover:translate-x-2 transition-all"></i>
                     </div>
                 </a>
             </div>
@@ -470,22 +482,22 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-10 border-t border-white/10">
+    <footer class="bg-white py-10 border-t border-black/10">
         <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2 group cursor-pointer">
-                 <div class="w-8 h-8 bg-gradient-to-tr from-brand-primary to-brand-secondary rounded-lg flex items-center justify-center">
+                 <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                     <i class="fa-solid fa-link text-white text-sm"></i>
                 </div>
-                <span class="font-bold text-xl">TECH<span class="text-brand-primary">LINKS</span></span>
+                <span class="font-bold text-xl text-black">TECH<span class="text-gray-400">LINKS</span></span>
             </div>
 
-            <div class="flex gap-6 text-gray-400 justify-center">
-                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+            <div class="flex gap-6 text-gray-500 justify-center">
+                <a href="#" class="hover:text-black transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-black transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-black transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
             </div>
 
-            <p class="text-gray-500 text-sm">
+            <p class="text-gray-400 text-sm">
                 &copy; 2024 TECH LINKS. All rights reserved.
             </p>
         </div>
@@ -574,12 +586,12 @@
             if (window.scrollY > 50) {
                 navbar.classList.add('py-2');
                 navbar.classList.remove('py-4');
-                navbar.classList.add('bg-brand-dark/90'); // Dark background on scroll
+                navbar.classList.add('bg-white/90'); // Light background on scroll
                 navbar.classList.add('backdrop-blur-md');
             } else {
                 navbar.classList.add('py-4');
                 navbar.classList.remove('py-2');
-                navbar.classList.remove('bg-brand-dark/90');
+                navbar.classList.remove('bg-white/90');
                 navbar.classList.remove('backdrop-blur-md');
             }
         });
