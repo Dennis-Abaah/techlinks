@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="vbgyRxj3C052apiBMxqYDbvf_c6f7mLnnMEj1juP3X0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH LINKS | Digital Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Name -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TechLinksGH",
+        "url": "https://techlinksgh.vercel.app/"
+       }
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins for rich, bold typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" sizes="any">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1A1A1A',      /* Dark Ash Background */
+                            ash: '#242424',       /* Lighter Ash for cards/sections */
+                            primary: '#CCFF00',   /* Lemon Green Accent */
+                            card: '#2A2A2A',      /* Dark Ash for cards */
+                            text: '#FFFFFF',      /* White Text */
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1A1A1A; /* brand-dark */
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Floating Navbar adjustments - Flat */
+        .glass-nav {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 2px solid #E5E7EB;
+        }
+
+        /* Flat themed cards */
+        .dark-card {
+            background: #242424;
+            border: 2px solid #333333;
+            transition: border-color 0.3s ease;
+        }
+        .dark-card:hover {
+            border-color: #CCFF00; /* Lemon Green */
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Curved Top Shape */
+        .pill-shape {
+            border-radius: 40px;
+        }
+        
+        /* Thin connecting lines for popups */
+        .connect-line-left::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: -1;
+        }
+        .connect-line-right::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: -1;
+        }
+
+        /* Hide scrollbar for the phone mockup content */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-primary selection:text-brand-dark">
+
+    <!-- Floating Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-6" id="navbar">
+        <div class="container mx-auto max-w-6xl">
+            <div class="glass-nav px-6 py-4 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-xl md:text-2xl font-extrabold tracking-tight flex items-center gap-2 text-black">
+                    <i class="fa-solid fa-gear text-black"></i>
+                    <span>Tech<span class="text-brand-dark">Links.</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Home</a>
+                    <a href="#services" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Services</a>
+                    <a href="#portfolio" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Work</a>
+                    <a href="#contact" class="px-6 py-2 bg-brand-primary text-brand-dark rounded-full font-bold hover:bg-[#b5e600] transition-all border-2 border-transparent hover:border-brand-dark">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-2xl text-black focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-24 left-4 right-4 bg-white border-2 border-gray-200 rounded-2xl p-6 md:hidden flex-col space-y-4 text-center z-50">
+            <a href="#home" class="block text-lg py-2 text-brand-dark font-bold">Home</a>
+            <a href="#services" class="block text-lg py-2 text-brand-dark font-bold">Services</a>
+            <a href="#portfolio" class="block text-lg py-2 text-brand-dark font-bold">Work</a>
+            <a href="#contact" class="block py-3 bg-brand-primary text-brand-dark rounded-xl font-bold text-lg">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Global Chat Button -->
+    <a href="https://wa.me/233530293161" class="fixed bottom-6 right-6 w-16 h-16 bg-brand-primary border-2 border-brand-dark rounded-full flex items-center justify-center text-brand-dark text-3xl z-50 hover:bg-[#b5e600] transition-colors">
+        <i class="fa-solid fa-comments"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-brand-dark">
+        <div class="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
+            
+            <!-- Flat Lemon Green Pill -->
+            <div class="bg-brand-primary text-brand-dark border-2 border-brand-dark px-8 md:px-16 py-3 md:py-4 pill-shape font-bold text-lg md:text-2xl mb-10 inline-block w-full max-w-[90%] md:max-w-lg reveal">
+                Digital Solutions Agency
+            </div>
+            
+            <!-- Main Headings -->
+            <h1 class="text-5xl md:text-7xl lg:text-[5rem] font-extrabold text-white leading-[1.1] mb-2 tracking-tight reveal" style="transition-delay: 100ms;">
+                We provide digital<br>solutions.
+            </h1>
+            <h2 class="text-4xl md:text-6xl lg:text-[4.5rem] font-extrabold text-brand-primary leading-[1.1] mb-8 tracking-tight reveal" style="transition-delay: 200ms;">
+                To brands and<br>businesses.
+            </h2>
+            
+            <p class="text-base md:text-xl text-gray-300 max-w-2xl mx-auto mb-16 reveal" style="transition-delay: 300ms;">
+                Work with experts and professional developers and designers for your websites, applications, branding and digital maintenance.
+            </p>
+            
+            <!-- Phone Mockup Area -->
+            <div class="relative w-full max-w-[300px] md:max-w-lg mx-auto h-[450px] md:h-[550px] reveal mt-10" style="transition-delay: 400ms;">
+                
+                <!-- Floating Popup 1 (Left) - Flat -->
+                <div class="absolute -left-12 md:-left-24 top-20 bg-brand-primary border-2 border-brand-dark rounded-xl p-3 md:p-4 flex items-center gap-3 z-20 animate-float max-w-[180px] md:max-w-[240px] connect-line-left">
+                    <div class="w-2 md:w-3 h-2 md:h-3 bg-brand-dark rounded-full flex-shrink-0"></div>
+                    <div class="text-left">
+                        <h4 class="text-brand-dark text-[10px] md:text-xs font-bold">Professional Service</h4>
+                        <p class="text-brand-dark/80 text-[8px] md:text-[10px] leading-tight mt-1 font-medium">Get access to premium digital services at your beck and call.</p>
+                    </div>
+                </div>
+
+                <!-- Floating Popup 2 (Right) - Flat -->
+                <div class="absolute -right-8 md:-right-24 bottom-32 bg-brand-primary border-2 border-brand-dark rounded-xl p-3 md:p-4 flex items-center gap-3 z-20 animate-float-delayed max-w-[180px] md:max-w-[240px] connect-line-right">
+                    <div class="w-2 md:w-3 h-2 md:h-3 bg-brand-dark rounded-full flex-shrink-0"></div>
+                    <div class="text-left">
+                        <h4 class="text-brand-dark text-[10px] md:text-xs font-bold">Fast Execution</h4>
+                        <p class="text-brand-dark/80 text-[8px] md:text-[10px] leading-tight mt-1 font-medium">Timely delivery for all your business projects.</p>
+                    </div>
+                </div>
+
+                <!-- The Phone Itself - Flat Design -->
+                <div class="relative mx-auto w-[220px] md:w-[280px] h-full bg-[#f8fafc] rounded-[2.5rem] md:rounded-[3rem] border-[8px] border-[#333333] overflow-hidden z-10 flex flex-col">
+                    <!-- Dynamic Island -->
+                    <div class="absolute top-2 left-1/2 -translate-x-1/2 w-16 md:w-20 h-5 md:h-6 bg-brand-dark rounded-full z-20"></div>
+                    
+                    <!-- App Interface inside phone -->
+                    <div class="flex-1 p-4 md:p-5 pt-12 md:pt-14 overflow-y-auto no-scrollbar bg-white">
+                        <!-- Header -->
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="text-left">
+                                <h3 class="font-bold text-brand-dark text-sm md:text-base">Home</h3>
+                                <p class="text-[10px] md:text-xs text-gray-500 font-medium">Welcome back, Client</p>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-brand-dark relative border border-gray-200">
+                                <i class="fa-solid fa-bell text-sm"></i>
+                                <div class="absolute top-1 right-1 w-2 h-2 bg-brand-primary rounded-full border border-brand-dark"></div>
+                            </div>
+                        </div>
+
+                        <!-- Search -->
+                        <div class="text-left mb-2">
+                            <p class="text-[10px] md:text-xs text-brand-dark font-bold">What project do you want to start?</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-3 flex items-center gap-2 mb-6 border-2 border-gray-200">
+                            <i class="fa-solid fa-search text-brand-dark/50 text-[10px] md:text-xs"></i>
+                            <span class="text-[10px] md:text-xs text-brand-dark/50 font-medium">Search services...</span>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <h4 class="font-bold text-xs md:text-sm text-brand-dark mb-3 text-left">Quick actions</h4>
+                        <div class="grid grid-cols-4 gap-2 mb-6">
+                            <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                                <div class="w-10 md:w-12 h-10 md:h-12 bg-white border-2 border-gray-200 rounded-xl flex items-center justify-center text-brand-dark group-hover:bg-brand-primary group-hover:border-brand-dark transition-colors">
+                                    <i class="fa-solid fa-code text-sm"></i>
+                                </div>
+                                <span class="text-[8px] md:text-[9px] text-brand-dark font-bold">Web</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                                <div class="w-10 md:w-12 h-10 md:h-12 bg-white border-2 border-gray-200 rounded-xl flex items-center justify-center text-brand-dark group-hover:bg-brand-primary group-hover:border-brand-dark transition-colors">
+                                    <i class="fa-solid fa-mobile-screen text-sm"></i>
+                                </div>
+                                <span class="text-[8px] md:text-[9px] text-brand-dark font-bold">App</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                                <div class="w-10 md:w-12 h-10 md:h-12 bg-white border-2 border-gray-200 rounded-xl flex items-center justify-center text-brand-dark group-hover:bg-brand-primary group-hover:border-brand-dark transition-colors">
+                                    <i class="fa-solid fa-pen-nib text-sm"></i>
+                                </div>
+                                <span class="text-[8px] md:text-[9px] text-brand-dark font-bold">Design</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                                <div class="w-10 md:w-12 h-10 md:h-12 bg-white border-2 border-gray-200 rounded-xl flex items-center justify-center text-brand-dark group-hover:bg-brand-primary group-hover:border-brand-dark transition-colors">
+                                    <i class="fa-solid fa-phone text-sm"></i>
+                                </div>
+                                <span class="text-[8px] md:text-[9px] text-brand-dark font-bold">Call</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Mini Banner - Flat -->
+                        <div class="bg-brand-primary rounded-xl p-3 flex items-center justify-between border-2 border-brand-dark">
+                             <div class="text-left">
+                                 <h5 class="text-[10px] md:text-xs font-bold text-brand-dark">Need a custom app?</h5>
+                                 <p class="text-[8px] md:text-[9px] text-brand-dark/80 font-medium">We build iOS & Android apps.</p>
+                             </div>
+                             <div class="w-6 h-6 bg-brand-dark rounded-full flex items-center justify-center text-brand-primary text-[10px]">
+                                 <i class="fa-solid fa-arrow-right"></i>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative bg-brand-ash">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-white tracking-tight">Our <span class="text-brand-primary">Expertise</span></h2>
+                <div class="w-20 h-2 bg-brand-primary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="dark-card p-8 rounded-3xl reveal relative group">
+                    <div class="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center mb-6 text-brand-dark border-2 border-brand-primary group-hover:bg-brand-dark group-hover:text-brand-primary transition-colors duration-300">
+                        <i class="fa-solid fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Website Development</h3>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-medium">High-performance, responsive, and SEO-optimized websites tailored to your brand.</p>
+                    <ul class="text-sm text-gray-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> Custom Code</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> CMS Solutions</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> Responsive Design</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="dark-card p-8 rounded-3xl reveal relative group" style="transition-delay: 100ms;">
+                     <div class="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center mb-6 text-brand-dark border-2 border-brand-primary group-hover:bg-brand-dark group-hover:text-brand-primary transition-colors duration-300">
+                        <i class="fa-solid fa-pen-nib text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Graphic Design</h3>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-medium">Visual storytelling that captivates. Branding, logos, social media assets, and UI/UX design.</p>
+                    <ul class="text-sm text-gray-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> Logo Design</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> Brand Identity</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> Marketing Assets</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="dark-card p-8 rounded-3xl reveal relative group" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center mb-6 text-brand-dark border-2 border-brand-primary group-hover:bg-brand-dark group-hover:text-brand-primary transition-colors duration-300">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">App Development</h3>
+                    <p class="text-gray-300 mb-6 text-sm leading-relaxed font-medium">Native and cross-platform mobile applications for iOS and Android platforms.</p>
+                    <ul class="text-sm text-gray-400 space-y-3 font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> iOS & Android</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> Flutter / React Native</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-square-check text-brand-primary text-lg"></i> App Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers Section - Flat Dark Ash -->
+    <section class="py-16 bg-brand-dark border-y-2 border-[#333333]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="counter-section">
+                <div class="reveal">
+                    <span class="text-4xl md:text-5xl font-extrabold text-white block mb-2">
+                        <span class="counter" data-target="50">0</span><span class="text-brand-primary">+</span>
+                    </span>
+                    <span class="text-sm text-brand-primary font-bold uppercase tracking-wider">Projects Completed</span>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <span class="text-4xl md:text-5xl font-extrabold text-white block mb-2">
+                        <span class="counter" data-target="30">0</span><span class="text-brand-primary">+</span>
+                    </span>
+                    <span class="text-sm text-brand-primary font-bold uppercase tracking-wider">Happy Clients</span>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <span class="text-4xl md:text-5xl font-extrabold text-white block mb-2">
+                        24<span class="text-brand-primary">/</span>7
+                    </span>
+                    <span class="text-sm text-brand-primary font-bold uppercase tracking-wider">Support</span>
+                </div>
+                <div class="reveal" style="transition-delay: 300ms;">
+                    <span class="text-4xl md:text-5xl font-extrabold text-white block mb-2">
+                        <span class="counter" data-target="100">0</span><span class="text-brand-primary">%</span>
+                    </span>
+                    <span class="text-sm text-brand-primary font-bold uppercase tracking-wider">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Work Section -->
+    <section id="portfolio" class="py-24 relative bg-brand-ash">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div>
+                    <span class="bg-brand-primary text-brand-dark px-3 py-1 font-bold tracking-widest uppercase text-xs mb-4 inline-block">Portfolio</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Selected <span class="text-brand-primary">Works.</span></h2>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-white hover:text-brand-primary font-bold transition-colors mt-4 md:mt-0 group">
+                    View All Projects <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal border-2 border-[#333333] hover:border-brand-primary transition-colors">
+                    <div class="aspect-video bg-brand-dark relative flex items-center justify-center">
+                        <i class="fa-solid fa-shop text-6xl text-[#333333] group-hover:text-brand-primary/20 transition-colors duration-300"></i>
+                        
+                        <!-- Flat Overlay -->
+                        <div class="absolute inset-0 bg-brand-dark/90 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-2xl font-bold text-white mb-1">E-Commerce Platform</h3>
+                            <p class="text-brand-primary text-sm font-bold uppercase tracking-wider">Web Development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal border-2 border-[#333333] hover:border-brand-primary transition-colors" style="transition-delay: 100ms;">
+                    <div class="aspect-video bg-brand-dark relative flex items-center justify-center">
+                        <i class="fa-solid fa-mobile-screen text-6xl text-[#333333] group-hover:text-brand-primary/20 transition-colors duration-300"></i>
+                        
+                        <div class="absolute inset-0 bg-brand-dark/90 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-2xl font-bold text-white mb-1">Fitness Application</h3>
+                            <p class="text-brand-primary text-sm font-bold uppercase tracking-wider">App Development</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 3 -->
+                 <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal border-2 border-[#333333] hover:border-brand-primary transition-colors">
+                    <div class="aspect-video bg-brand-dark relative flex items-center justify-center">
+                        <i class="fa-solid fa-palette text-6xl text-[#333333] group-hover:text-brand-primary/20 transition-colors duration-300"></i>
+                        
+                        <div class="absolute inset-0 bg-brand-dark/90 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-2xl font-bold text-white mb-1">Brand Identity System</h3>
+                            <p class="text-brand-primary text-sm font-bold uppercase tracking-wider">Graphic Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 4 -->
+                 <div class="group relative rounded-3xl overflow-hidden cursor-pointer reveal border-2 border-[#333333] hover:border-brand-primary transition-colors" style="transition-delay: 100ms;">
+                    <div class="aspect-video bg-brand-dark relative flex items-center justify-center">
+                        <i class="fa-solid fa-building text-6xl text-[#333333] group-hover:text-brand-primary/20 transition-colors duration-300"></i>
+                        
+                        <div class="absolute inset-0 bg-brand-dark/90 flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-2xl font-bold text-white mb-1">Corporate Portal</h3>
+                            <p class="text-brand-primary text-sm font-bold uppercase tracking-wider">Web Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="mt-10 text-center md:hidden">
+                <a href="#" class="inline-flex items-center gap-2 text-white hover:text-brand-primary font-bold transition-colors">
+                    View All Projects <i class="fa-solid fa-arrow-right"></i>
+                </a>
+             </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us - Flat -->
+    <section class="py-24 bg-brand-dark border-t-2 border-[#333333]">
+        <div class="container mx-auto px-6">
+            <div class="bg-brand-ash rounded-[2.5rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-16 reveal border-2 border-[#333333]">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-white tracking-tight">Why <span class="text-brand-primary">Tech Links?</span></h2>
+                    <p class="text-gray-300 mb-8 text-lg leading-relaxed font-medium">We don't just write code or draw pixels; we architect digital assets that drive tangible growth for your business.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-primary flex items-center justify-center text-brand-dark flex-shrink-0 border-2 border-brand-dark">
+                                <i class="fa-solid fa-rocket text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-white mb-1">Fast Delivery</h4>
+                                <p class="text-sm text-gray-400 font-medium">We respect deadlines and deliver premium quality work right on schedule.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-dark border-2 border-[#333333] flex items-center justify-center text-brand-primary flex-shrink-0">
+                                <i class="fa-solid fa-headset text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl text-white mb-1">24/7 Communication</h4>
+                                <p class="text-sm text-gray-400 font-medium">Always available via Phone or WhatsApp to support you and answer queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 relative w-full">
+                    <!-- Decorative Graphic - Flat Solid Colors -->
+                    <div class="relative z-10 grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-8">
+                             <div class="bg-white p-4 rounded-2xl h-32 w-full border-2 border-gray-200 flex items-center justify-center">
+                                 <i class="fa-brands fa-react text-4xl text-brand-dark"></i>
+                             </div>
+                             <div class="bg-brand-primary p-4 rounded-2xl h-48 w-full border-2 border-brand-dark flex items-center justify-center">
+                                 <i class="fa-solid fa-code text-5xl text-brand-dark"></i>
+                             </div>
+                        </div>
+                         <div class="space-y-4">
+                            <div class="bg-brand-dark p-4 rounded-2xl h-48 w-full border-2 border-[#333333] flex items-center justify-center">
+                                 <i class="fa-solid fa-mobile-screen text-5xl text-brand-primary"></i>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl h-32 w-full border-2 border-gray-200 flex items-center justify-center">
+                                <i class="fa-brands fa-figma text-4xl text-brand-dark"></i>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative bg-brand-ash">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 reveal text-white tracking-tight">Ready to start?</h2>
+            <p class="text-xl text-brand-primary font-bold mb-14 reveal">Get in touch with TECH LINKS today. Let's build your future.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+                <!-- Phone Card - Flat -->
+                <a href="tel:+233530293161" class="bg-brand-dark p-6 md:px-10 md:py-8 rounded-3xl flex flex-row items-center justify-between gap-4 group border-2 border-[#333333] hover:border-brand-primary transition-colors">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-[#222222] rounded-2xl flex items-center justify-center text-2xl group-hover:bg-brand-primary group-hover:text-brand-dark transition-colors duration-300 border-2 border-[#333333] group-hover:border-brand-dark">
+                            <i class="fa-solid fa-phone text-brand-primary group-hover:text-brand-dark"></i>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-white mb-1">Call Us</h3>
+                            <p class="text-gray-300 text-base font-bold">+233 530 293 161</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <i class="fa-solid fa-arrow-right text-brand-primary group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- WhatsApp Card - Flat Lemon Green -->
+                <a href="https://wa.me/233530293161" class="bg-brand-primary p-6 md:px-10 md:py-8 rounded-3xl flex flex-row items-center justify-between gap-4 group hover:bg-[#b5e600] transition-colors border-2 border-brand-dark">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-brand-dark rounded-2xl flex items-center justify-center text-3xl group-hover:scale-105 transition-transform duration-300">
+                            <i class="fa-brands fa-whatsapp text-brand-primary"></i>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-brand-dark mb-1">WhatsApp</h3>
+                            <p class="text-brand-dark text-base font-bold">Chat instantly with us</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <i class="fa-solid fa-arrow-right text-brand-dark group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Flat -->
+    <footer class="bg-[#111111] py-12 border-t-2 border-[#333333]">
+        <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                 <div class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+                    <i class="fa-solid fa-gear text-brand-primary"></i>
+                    <span>Tech<span class="text-brand-primary">Links.</span></span>
+                </div>
+            </div>
+
+            <div class="flex gap-6 text-gray-500 justify-center">
+                <a href="#" class="hover:text-brand-primary transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-brand-primary transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-brand-primary transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+            </div>
+
+            <p class="text-gray-500 text-sm font-bold">
+                &copy; 2024 TECH LINKS. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Scroll Animation Observer (Reveal)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        setTimeout(() => {
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        }, 100);
+
+        // Number Counter Animation
+        const counterSection = document.getElementById('counter-section');
+        let counterStarted = false;
+
+        const countUp = (element) => {
+            const target = +element.getAttribute('data-target');
+            const speed = 200;
+            const increment = target / speed;
+
+            const updateCount = () => {
+                const count = +element.innerText;
+                if(count < target) {
+                    element.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 20);
+                } else {
+                    element.innerText = target;
+                }
+            }
+            updateCount();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting && !counterStarted) {
+                    const counters = document.querySelectorAll('.counter');
+                    counters.forEach(counter => countUp(counter));
+                    counterStarted = true;
+                }
+            });
+        }, { threshold: 0.2 });
+
+        if(counterSection) {
+            counterObserver.observe(counterSection);
+        }
+
+        // Navbar interaction on scroll
+        const navbar = document.getElementById('navbar');
+        const navContainer = navbar.querySelector('.glass-nav');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navContainer.classList.add('py-2');
+                navContainer.classList.remove('py-4');
+            } else {
+                navContainer.classList.add('py-4');
+                navContainer.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
