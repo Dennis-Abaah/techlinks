@@ -537,24 +537,53 @@
     </section>
 
     <!-- Footer - Flat -->
-    <footer class="bg-[#111111] py-12 border-t-2 border-[#333333]">
-        <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                 <div class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
-                    <i class="fa-solid fa-gear text-brand-primary"></i>
-                    <span>Tech<span class="text-brand-primary">Links.</span></span>
+    <footer class="bg-[#111111] py-14 border-t-2 border-[#333333]">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 text-center md:text-left">
+                
+                <!-- Brand Col -->
+                <div class="md:col-span-2">
+                    <a href="#home" class="text-2xl font-extrabold tracking-tight text-white flex items-center justify-center md:justify-start gap-2 mb-4">
+                        <i class="fa-solid fa-gear text-brand-primary"></i>
+                        <span>Tech<span class="text-brand-primary">Links.</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm font-medium leading-relaxed mb-6 mx-auto md:mx-0">
+                        Empowering forward-thinking brands and businesses with cutting-edge web development, mobile applications, bespoke graphic design, and reliable digital maintenance.
+                    </p>
+                    <div class="flex gap-4 text-gray-400 justify-center md:justify-start">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
                 </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-medium">
+                        <li><a href="#home" class="hover:text-brand-primary transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-brand-primary transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-brand-primary transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-brand-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Policies -->
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Legal & Policies</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-medium">
+                        <li><a href="terms.html" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-brand-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="refund.html" class="hover:text-brand-primary transition-colors">Refund Policy</a></li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="flex gap-6 text-gray-500 justify-center">
-                <a href="#" class="hover:text-brand-primary transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-                <a href="#" class="hover:text-brand-primary transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
-                <a href="#" class="hover:text-brand-primary transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+            <div class="pt-8 border-t border-[#222222] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium text-center md:text-left">
+                <p>&copy; 2026 TECH LINKS. All rights reserved.</p>
+                <p>Digital Solutions for Ambitious Brands.</p>
             </div>
-
-            <p class="text-gray-500 text-sm font-bold">
-                &copy; 2024 TECH LINKS. All rights reserved.
-            </p>
         </div>
     </footer>
 

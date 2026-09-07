@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | TECH LINKS Digital Solutions</title>
+    <meta name="description" content="Privacy Policy for TechLinks Digital Solutions Agency. Learn how we collect, store, safeguard, and process your personal data and project credentials.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Schema / Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy - TechLinks",
+        "url": "https://techlinksgh.vercel.app/privacy.html",
+        "description": "Privacy Policy for TechLinks Digital Solutions Agency"
+      }
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" sizes="any">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1A1A1A',      /* Dark Ash Background */
+                            ash: '#242424',       /* Lighter Ash for cards/sections */
+                            primary: '#CCFF00',   /* Lemon Green Accent */
+                            card: '#2A2A2A',      /* Dark Ash for cards */
+                            text: '#FFFFFF',      /* White Text */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 2px solid #E5E7EB;
+        }
+
+        .dark-card {
+            background: #242424;
+            border: 2px solid #333333;
+            transition: border-color 0.3s ease;
+        }
+        .dark-card:hover {
+            border-color: #CCFF00;
+        }
+
+        .pill-shape {
+            border-radius: 40px;
+        }
+
+        .toc-link.active {
+            color: #CCFF00;
+            border-left: 2px solid #CCFF00;
+            padding-left: 0.75rem;
+            font-weight: 700;
+        }
+
+        .legal-section {
+            scroll-margin-top: 120px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-primary selection:text-brand-dark">
+
+    <!-- Floating Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-6" id="navbar">
+        <div class="container mx-auto max-w-6xl">
+            <div class="glass-nav px-6 py-4 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight flex items-center gap-2 text-black">
+                    <i class="fa-solid fa-gear text-black"></i>
+                    <span>Tech<span class="text-brand-dark">Links.</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Home</a>
+                    <a href="index.html#services" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Services</a>
+                    <a href="index.html#portfolio" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Work</a>
+                    <a href="index.html#contact" class="px-6 py-2 bg-brand-primary text-brand-dark rounded-full font-bold hover:bg-[#b5e600] transition-all border-2 border-transparent hover:border-brand-dark">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-2xl text-black focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-24 left-4 right-4 bg-white border-2 border-gray-200 rounded-2xl p-6 md:hidden flex-col space-y-4 text-center z-50">
+            <a href="index.html#home" class="block text-lg py-2 text-brand-dark font-bold">Home</a>
+            <a href="index.html#services" class="block text-lg py-2 text-brand-dark font-bold">Services</a>
+            <a href="index.html#portfolio" class="block text-lg py-2 text-brand-dark font-bold">Work</a>
+            <a href="index.html#contact" class="block py-3 bg-brand-primary text-brand-dark rounded-xl font-bold text-lg">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Global Chat Button -->
+    <a href="https://wa.me/233530293161" class="fixed bottom-6 right-6 w-16 h-16 bg-brand-primary border-2 border-brand-dark rounded-full flex items-center justify-center text-brand-dark text-3xl z-50 hover:bg-[#b5e600] transition-colors" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="fa-solid fa-comments"></i>
+    </a>
+
+    <!-- Hero Header -->
+    <header class="pt-36 pb-14 md:pt-48 md:pb-20 bg-brand-dark border-b-2 border-[#333333]">
+        <div class="container mx-auto px-6 max-w-6xl text-center md:text-left">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-brand-primary text-brand-dark font-bold text-xs uppercase px-4 py-1.5 rounded-full mb-4">
+                        <i class="fa-solid fa-user-shield"></i> Data Protection & Privacy
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Privacy <span class="text-brand-primary">Policy</span>
+                    </h1>
+                    <p class="text-gray-400 mt-4 text-base md:text-lg max-w-2xl font-medium">
+                        At TechLinks, we respect your privacy and are committed to protecting your personal data, company assets, and project credentials with institutional-grade security.
+                    </p>
+                </div>
+                <div class="bg-brand-ash border-2 border-[#333333] rounded-2xl p-4 text-xs text-gray-400 flex flex-col gap-1 text-left">
+                    <div><span class="text-white font-bold">Effective Date:</span> January 1, 2024</div>
+                    <div><span class="text-white font-bold">Last Updated:</span> September 7, 2026</div>
+                    <div><span class="text-brand-primary font-bold">Compliance:</span> Global Standards & Data Protection</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <main class="py-16 md:py-24 bg-brand-ash">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Sticky Sidebar / Table of Contents -->
+                <aside class="lg:col-span-4 hidden lg:block">
+                    <div class="sticky top-28 bg-brand-dark border-2 border-[#333333] rounded-3xl p-6">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-shield-halved text-brand-primary"></i> Policy Contents
+                        </h3>
+                        <nav class="space-y-2 text-xs font-medium text-gray-400">
+                            <a href="#introduction" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">1. Introduction & Scope</a>
+                            <a href="#data-collection" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">2. Information We Collect</a>
+                            <a href="#data-usage" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">3. How We Use Your Data</a>
+                            <a href="#legal-basis" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">4. Legal Grounds for Processing</a>
+                            <a href="#credentials-security" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">5. Handling Project Credentials</a>
+                            <a href="#data-sharing" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">6. Third-Party Sharing</a>
+                            <a href="#cookies" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">7. Cookies & Tracking</a>
+                            <a href="#retention" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">8. Retention & Deletion</a>
+                            <a href="#your-rights" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">9. Your Privacy Rights</a>
+                            <a href="#security-measures" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">10. Security Infrastructure</a>
+                            <a href="#international" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">11. Cross-Border Transfers</a>
+                            <a href="#children" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">12. Children's Privacy</a>
+                            <a href="#policy-updates" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">13. Policy Amendments</a>
+                            <a href="#contact-dpo" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">14. Contact Our Data Team</a>
+                        </nav>
+                        
+                        <div class="mt-8 pt-6 border-t border-[#333333]">
+                            <p class="text-[11px] text-gray-400 mb-3">Questions about how we handle your business data?</p>
+                            <a href="https://wa.me/233530293161" class="w-full inline-flex items-center justify-center gap-2 bg-brand-primary text-brand-dark font-bold text-xs py-2.5 rounded-xl hover:bg-[#b5e600] transition-colors">
+                                <i class="fa-brands fa-whatsapp"></i> Privacy Inquiries
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Legal Text Content -->
+                <div class="lg:col-span-8 space-y-12 text-gray-300 leading-relaxed font-normal">
+
+                    <!-- Section 1 -->
+                    <section id="introduction" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">01</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Introduction & Scope</h2>
+                        </div>
+                        <p class="mb-4">
+                            Welcome to the Privacy Policy of <strong class="text-white">TechLinks</strong> ("TechLinks", "we", "us", or "our"). TechLinks operates as a premier digital solutions agency providing website development, mobile application engineering, graphic design and brand identity architecture, and digital maintenance services.
+                        </p>
+                        <p class="mb-4">
+                            This Privacy Policy sets out how we collect, store, protect, process, and transfer personal data and proprietary project information obtained when you visit our website (<a href="https://techlinksgh.vercel.app/" class="text-brand-primary hover:underline font-medium">techlinksgh.vercel.app</a>), contact our agency via phone or WhatsApp, or contract our professional digital development and design services.
+                        </p>
+                        <p class="text-sm">
+                            By interacting with our platform or commissioning our services, you acknowledge the collection and utilization of your information in accordance with this policy.
+                        </p>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section id="data-collection" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">02</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Information We Collect</h2>
+                        </div>
+                        <p class="mb-4">
+                            To deliver world-class digital solutions, we collect different classifications of data based on the nature of our engagement:
+                        </p>
+                        
+                        <div class="space-y-4 my-6">
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-id-card text-brand-primary"></i> 1. Directly Provided Contact & Business Information
+                                </h3>
+                                <p class="text-xs text-gray-400 mb-2">When you submit an inquiry, initiate a WhatsApp conversation, request a quote, or sign a service contract, we collect:</p>
+                                <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
+                                    <li>Full Legal Name and Professional Job Title</li>
+                                    <li>Company / Business Name and Operating Industry</li>
+                                    <li>Direct Telephone Number and WhatsApp Contact Information</li>
+                                    <li>Email Address and Physical / Corporate Address</li>
+                                    <li>Project Specifications, Creative Briefs, Budget Estimates, and Feature Requirements</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-server text-brand-primary"></i> 2. Technical Credentials & Project Infrastructure Data
+                                </h3>
+                                <p class="text-xs text-gray-400 mb-2">During active web, mobile, or design development, clients may provide technical assets such as:</p>
+                                <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
+                                    <li>Web hosting credentials, cPanel/FTP logins, and DNS management access</li>
+                                    <li>Database connection strings and cloud storage keys (AWS, Firebase, Supabase)</li>
+                                    <li>Third-party API tokens (Paystack, Stripe, Twilio, Google Maps)</li>
+                                    <li>Apple Developer and Google Play Console access permissions</li>
+                                    <li>Brand style manuals, vector fonts, and proprietary media files</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-chart-line text-brand-primary"></i> 3. Automated Technical & Usage Data
+                                </h3>
+                                <p class="text-xs text-gray-400 mb-2">When navigating our website, standard web analytics automatically capture:</p>
+                                <ul class="text-xs text-gray-300 list-disc pl-5 space-y-1">
+                                    <li>Internet Protocol (IP) address and approximate geographic geolocation</li>
+                                    <li>Browser type, version, operating system, and device screen resolution</li>
+                                    <li>Referring URL, pages visited, time spent per section, and interaction heatmaps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section id="data-usage" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">03</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">How We Use Your Data</h2>
+                        </div>
+                        <p class="mb-4">
+                            TechLinks processes your information solely for legitimate business, contractual, and technical operational objectives:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4 text-xs">
+                            <div class="bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <strong class="text-white text-sm block mb-1">Service Execution</strong>
+                                Developing websites, coding mobile apps, preparing graphic assets, configuring server environments, and providing ongoing technical support.
+                            </div>
+                            <div class="bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <strong class="text-white text-sm block mb-1">Direct Communication</strong>
+                                Providing project milestone updates, conducting review sessions, dispatching proposals, and addressing urgent support tickets via phone or WhatsApp.
+                            </div>
+                            <div class="bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <strong class="text-white text-sm block mb-1">Invoicing & Accounting</strong>
+                                Generating formal quotes, processing milestone payments, issuing receipts, and fulfilling regulatory tax and accounting obligations.
+                            </div>
+                            <div class="bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <strong class="text-white text-sm block mb-1">Platform Optimization</strong>
+                                Analyzing website performance metrics, monitoring cyber-threats, preventing spam, and enhancing user interface experiences.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section id="legal-basis" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">04</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Legal Grounds for Processing</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            Under applicable data protection frameworks (including the Ghana Data Protection Act 2012 (Act 843) and international standards such as GDPR), we process personal data under the following lawful bases:
+                        </p>
+                        <ul class="space-y-2.5 text-sm list-disc pl-5 text-gray-300">
+                            <li><strong class="text-white">Contractual Performance:</strong> Processing required to fulfill our Statement of Work, project deliverables, or preliminary proposal estimations requested by you.</li>
+                            <li><strong class="text-white">Legitimate Interests:</strong> Operating, safeguarding, and expanding our agency services without infringing upon your fundamental privacy rights.</li>
+                            <li><strong class="text-white">Legal Compliance:</strong> Complying with applicable statutory accounting, tax, fraud prevention, and commercial laws.</li>
+                            <li><strong class="text-white">Explicit Consent:</strong> When you voluntarily submit contact forms, opt into notifications, or grant access to proprietary servers.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section id="credentials-security" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">05</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Handling of Client Project Credentials</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            As a digital engineering agency, we treat all client hosting passwords, SSH keys, API secrets, database credentials, and source repositories with extreme security diligence:
+                        </p>
+                        <div class="bg-brand-ash p-6 rounded-2xl border border-[#333333] space-y-3 text-sm">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-lock text-brand-primary text-base mt-1"></i>
+                                <div><strong class="text-white">Encrypted Vault Storage:</strong> All credentials shared during development are stored exclusively in end-to-end encrypted password management vaults with multi-factor authentication (MFA).</div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-user-lock text-brand-primary text-base mt-1"></i>
+                                <div><strong class="text-white">Principle of Least Privilege:</strong> Only developers and engineers directly assigned to your specific project milestone have temporary access to project credentials.</div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-trash-can text-brand-primary text-base mt-1"></i>
+                                <div><strong class="text-white">Post-Launch Purge:</strong> Upon project handoff and warranty closure, clients are strongly advised to rotate all passwords. Any cached temporary credentials on our internal machines are wiped upon written request.</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 6 -->
+                    <section id="data-sharing" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">06</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Data Sharing & Third-Party Disclosure</h2>
+                        </div>
+                        <div class="bg-brand-ash border-l-4 border-brand-primary p-4 rounded-r-xl text-sm text-gray-300 mb-6">
+                            <strong class="text-white text-base block mb-1">Zero Commercial Data Sales:</strong>
+                            TechLinks has never sold, rented, leased, or monetized client data or visitor information to advertisers or data brokers, and will never do so under any circumstances.
+                        </div>
+                        <p class="mb-4 text-sm">
+                            We disclose information strictly to trusted sub-processors and service partners indispensable to executing our digital services:
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-5">
+                            <li><strong class="text-white">Cloud Hosting & CDNs:</strong> High-performance server providers (e.g., Vercel, AWS, Cloudflare, DigitalOcean) for staging and production hosting.</li>
+                            <li><strong class="text-white">Communication Infrastructure:</strong> WhatsApp Business API and secure email servers for customer communications.</li>
+                            <li><strong class="text-white">Payment Gateways:</strong> Regulated payment processors (Paystack, Stripe) to securely process card and mobile money transactions without storing raw card numbers on our servers.</li>
+                            <li><strong class="text-white">Legal Authorities:</strong> Law enforcement or regulatory bodies solely when mandated by valid subpoenas, court orders, or applicable statutory laws.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section id="cookies" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">07</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Cookies & Tracking Technologies</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            Our website utilizes minimal, privacy-centric cookies and local storage tokens to ensure core functionality and analyze traffic patterns:
+                        </p>
+                        <div class="space-y-3 text-xs">
+                            <div class="bg-brand-ash p-3 rounded-xl border border-[#333333]">
+                                <strong class="text-white block mb-0.5">Essential Cookies:</strong> Required for fundamental site navigation, security token validation, and responsive rendering.
+                            </div>
+                            <div class="bg-brand-ash p-3 rounded-xl border border-[#333333]">
+                                <strong class="text-white block mb-0.5">Performance & Analytics:</strong> Aggregate, anonymized data capturing visitor traffic to help us optimize UI speeds and refine our service portfolio.
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4">
+                            You can configure your browser settings to decline or delete cookies at any time; however, certain interactive components of our website may experience reduced responsiveness.
+                        </p>
+                    </section>
+
+                    <!-- Section 8 -->
+                    <section id="retention" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">08</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Data Retention & Archival Protocol</h2>
+                        </div>
+                        <p class="text-sm mb-4">
+                            We retain personal data and project records only for as long as necessary to fulfill the objectives for which it was gathered:
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-5">
+                            <li><strong class="text-white">Active Project Data:</strong> Retained for the entire duration of the client relationship, including active maintenance contracts.</li>
+                            <li><strong class="text-white">Completed Project Source Backups:</strong> Retained in secure cold storage for up to twelve (12) months following project completion to assist clients with disaster recovery or subsequent version upgrades.</li>
+                            <li><strong class="text-white">Financial Invoices & Receipts:</strong> Retained for a minimum of six (6) years to comply with statutory commercial and tax accounting regulations.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 9 -->
+                    <section id="your-rights" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">09</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Your Privacy Rights & Controls</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            Depending on your jurisdiction, you are entitled to several fundamental data privacy rights regarding your personal records:
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <div class="bg-brand-ash p-3 rounded-xl border border-[#333333]">
+                                <strong class="text-brand-primary block mb-0.5"><i class="fa-solid fa-eye mr-1"></i> Right of Access</strong>
+                                Request a comprehensive copy of all personal information we hold about you.
+                            </div>
+                            <div class="bg-brand-ash p-3 rounded-xl border border-[#333333]">
+                                <strong class="text-brand-primary block mb-0.5"><i class="fa-solid fa-pen mr-1"></i> Right to Rectification</strong>
+                                Request immediate correction of outdated, inaccurate, or incomplete records.
+                            </div>
+                            <div class="bg-brand-ash p-3 rounded-xl border border-[#333333]">
+                                <strong class="text-brand-primary block mb-0.5"><i class="fa-solid fa-trash-can mr-1"></i> Right to Erasure</strong>
+                                Request permanent deletion ("Right to be Forgotten") of non-essential personal records.
+                            </div>
+                            <div class="bg-brand-ash p-3 rounded-xl border border-[#333333]">
+                                <strong class="text-brand-primary block mb-0.5"><i class="fa-solid fa-file-export mr-1"></i> Data Portability</strong>
+                                Request transmission of your data in a structured, machine-readable format.
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4">
+                            To exercise any of these rights, please contact our team via phone or WhatsApp at <strong>+233 530 293 161</strong>. Requests are verified and answered within fourteen (14) business days.
+                        </p>
+                    </section>
+
+                    <!-- Section 10 -->
+                    <section id="security-measures" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">10</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Security Infrastructure & Encryption</h2>
+                        </div>
+                        <p class="text-sm mb-4">
+                            TechLinks implements strict technical, physical, and procedural controls designed to safeguard against unauthorized access, destruction, loss, or disclosure:
+                        </p>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-5">
+                            <li><strong class="text-white">Transport Layer Security (TLS 1.3):</strong> All data transmitted to and from our website is encrypted using modern HTTPS protocols.</li>
+                            <li><strong class="text-white">Git Version Control Security:</strong> Project source repositories are stored in private, access-controlled repositories with signed SSH commits.</li>
+                            <li><strong class="text-white">No Plaintext Storage:</strong> API secrets, connection strings, and administrative passwords are never committed to public source control.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 11 -->
+                    <section id="international" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">11</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Cross-Border & International Transfers</h2>
+                        </div>
+                        <p class="text-sm leading-relaxed">
+                            As a digital solutions provider serving regional and global clients, your project files and server deployments may be hosted on cloud infrastructure distributed internationally (e.g., European or North American data centers). In all instances, we ensure that cloud vendors provide adequate data protection guarantees in compliance with recognized global standards.
+                        </p>
+                    </section>
+
+                    <!-- Section 12 -->
+                    <section id="children" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">12</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Children's Privacy Protection</h2>
+                        </div>
+                        <p class="text-sm leading-relaxed">
+                            Our services and web platforms are strictly intended for businesses, professionals, and individuals aged eighteen (18) years or older. We do not knowingly collect or solicit personal information from minors. If we discover that a minor under 18 has submitted personal records, we will delete the data immediately.
+                        </p>
+                    </section>
+
+                    <!-- Section 13 -->
+                    <section id="policy-updates" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">13</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Updates & Amendments to this Policy</h2>
+                        </div>
+                        <p class="text-sm leading-relaxed">
+                            TechLinks reserves the right to update this Privacy Policy periodically to reflect technological advancements, evolving regulatory requirements, or enhancements to our digital services. When revisions occur, the "Last Updated" date at the top of this document will be modified accordingly. Continued engagement with our services constitutes acceptance of the revised terms.
+                        </p>
+                    </section>
+
+                    <!-- Section 14 -->
+                    <section id="contact-dpo" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">14</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Contact Our Data & Privacy Team</h2>
+                        </div>
+                        <p class="mb-6 text-sm">
+                            If you have questions, concerns, or requests regarding this Privacy Policy or our data management practices, please reach out to us:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="tel:+233530293161" class="flex items-center gap-4 bg-brand-ash p-4 rounded-2xl border border-[#333333] hover:border-brand-primary transition-colors">
+                                <div class="w-12 h-12 rounded-xl bg-brand-primary text-brand-dark flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 block font-bold">Direct Phone</span>
+                                    <span class="text-sm text-white font-bold">+233 530 293 161</span>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/233530293161" class="flex items-center gap-4 bg-brand-primary p-4 rounded-2xl border border-brand-dark text-brand-dark hover:bg-[#b5e600] transition-colors">
+                                <div class="w-12 h-12 rounded-xl bg-brand-dark text-brand-primary flex items-center justify-center text-xl">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-brand-dark/80 block font-bold">Direct WhatsApp</span>
+                                    <span class="text-sm text-brand-dark font-bold">+233 530 293 161</span>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#111111] py-14 border-t-2 border-[#333333]">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Brand Col -->
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-gear text-brand-primary"></i>
+                        <span>Tech<span class="text-brand-primary">Links.</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm font-medium leading-relaxed mb-6">
+                        Empowering forward-thinking brands and businesses with cutting-edge web development, mobile applications, bespoke graphic design, and reliable digital maintenance.
+                    </p>
+                    <div class="flex gap-4 text-gray-400">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-medium">
+                        <li><a href="index.html#home" class="hover:text-brand-primary transition-colors">Home</a></li>
+                        <li><a href="index.html#services" class="hover:text-brand-primary transition-colors">Services</a></li>
+                        <li><a href="index.html#portfolio" class="hover:text-brand-primary transition-colors">Portfolio</a></li>
+                        <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Policies -->
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Legal & Policies</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-medium">
+                        <li><a href="terms.html" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="text-brand-primary font-semibold hover:underline">Privacy Policy</a></li>
+                        <li><a href="refund.html" class="hover:text-brand-primary transition-colors">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-[#222222] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium text-center md:text-left">
+                <p>&copy; 2026 TECH LINKS. All rights reserved.</p>
+                <p>Digital Solutions for Ambitious Brands.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Sticky TOC highlight on scroll
+        const sections = document.querySelectorAll('.legal-section');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 140;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

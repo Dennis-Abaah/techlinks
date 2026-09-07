@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | TECH LINKS Digital Solutions</title>
+    <meta name="description" content="Terms of Service and client service agreement for TechLinks Digital Solutions Agency. Learn about our terms for web development, mobile app development, graphic design, and digital maintenance.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Name / Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms of Service - TechLinks",
+        "url": "https://techlinksgh.vercel.app/terms.html",
+        "description": "Terms of Service for TechLinks Digital Solutions Agency"
+      }
+    </script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" sizes="any">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1A1A1A',      /* Dark Ash Background */
+                            ash: '#242424',       /* Lighter Ash for cards/sections */
+                            primary: '#CCFF00',   /* Lemon Green Accent */
+                            card: '#2A2A2A',      /* Dark Ash for cards */
+                            text: '#FFFFFF',      /* White Text */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #1A1A1A;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            border: 2px solid #E5E7EB;
+        }
+
+        .dark-card {
+            background: #242424;
+            border: 2px solid #333333;
+            transition: border-color 0.3s ease;
+        }
+        .dark-card:hover {
+            border-color: #CCFF00;
+        }
+
+        .pill-shape {
+            border-radius: 40px;
+        }
+
+        /* Active link highlight for table of contents */
+        .toc-link.active {
+            color: #CCFF00;
+            border-left: 2px solid #CCFF00;
+            padding-left: 0.75rem;
+            font-weight: 700;
+        }
+
+        /* Custom styling for legal text blocks */
+        .legal-section {
+            scroll-margin-top: 120px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-primary selection:text-brand-dark">
+
+    <!-- Floating Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 top-4 px-4 md:px-6" id="navbar">
+        <div class="container mx-auto max-w-6xl">
+            <div class="glass-nav px-6 py-4 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight flex items-center gap-2 text-black">
+                    <i class="fa-solid fa-gear text-black"></i>
+                    <span>Tech<span class="text-brand-dark">Links.</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Home</a>
+                    <a href="index.html#services" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Services</a>
+                    <a href="index.html#portfolio" class="text-gray-900 hover:text-brand-dark font-bold transition-all">Work</a>
+                    <a href="index.html#contact" class="px-6 py-2 bg-brand-primary text-brand-dark rounded-full font-bold hover:bg-[#b5e600] transition-all border-2 border-transparent hover:border-brand-dark">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-2xl text-black focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-24 left-4 right-4 bg-white border-2 border-gray-200 rounded-2xl p-6 md:hidden flex-col space-y-4 text-center z-50">
+            <a href="index.html#home" class="block text-lg py-2 text-brand-dark font-bold">Home</a>
+            <a href="index.html#services" class="block text-lg py-2 text-brand-dark font-bold">Services</a>
+            <a href="index.html#portfolio" class="block text-lg py-2 text-brand-dark font-bold">Work</a>
+            <a href="index.html#contact" class="block py-3 bg-brand-primary text-brand-dark rounded-xl font-bold text-lg">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Global Chat Button -->
+    <a href="https://wa.me/233530293161" class="fixed bottom-6 right-6 w-16 h-16 bg-brand-primary border-2 border-brand-dark rounded-full flex items-center justify-center text-brand-dark text-3xl z-50 hover:bg-[#b5e600] transition-colors" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+        <i class="fa-solid fa-comments"></i>
+    </a>
+
+    <!-- Hero Header -->
+    <header class="pt-36 pb-14 md:pt-48 md:pb-20 bg-brand-dark border-b-2 border-[#333333]">
+        <div class="container mx-auto px-6 max-w-6xl text-center md:text-left">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-brand-primary text-brand-dark font-bold text-xs uppercase px-4 py-1.5 rounded-full mb-4">
+                        <i class="fa-solid fa-scale-balanced"></i> Legal Agreement
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Terms of <span class="text-brand-primary">Service</span>
+                    </h1>
+                    <p class="text-gray-400 mt-4 text-base md:text-lg max-w-2xl font-medium">
+                        Please review these terms carefully. They govern all client engagements, project deliverables, software development, design, and digital maintenance services provided by TechLinks.
+                    </p>
+                </div>
+                <div class="bg-brand-ash border-2 border-[#333333] rounded-2xl p-4 text-xs text-gray-400 flex flex-col gap-1 text-left">
+                    <div><span class="text-white font-bold">Effective Date:</span> January 1, 2024</div>
+                    <div><span class="text-white font-bold">Last Updated:</span> September 7, 2026</div>
+                    <div><span class="text-brand-primary font-bold">Status:</span> Active & Enforceable</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <main class="py-16 md:py-24 bg-brand-ash">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Sticky Sidebar / Table of Contents -->
+                <aside class="lg:col-span-4 hidden lg:block">
+                    <div class="sticky top-28 bg-brand-dark border-2 border-[#333333] rounded-3xl p-6">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-brand-primary"></i> Table of Contents
+                        </h3>
+                        <nav class="space-y-2 text-xs font-medium text-gray-400">
+                            <a href="#overview" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">1. Overview & Agreement</a>
+                            <a href="#services-scope" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">2. Scope of Services</a>
+                            <a href="#proposals" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">3. Estimates, SOW & Scoping</a>
+                            <a href="#client-responsibilities" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">4. Client Responsibilities</a>
+                            <a href="#payments" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">5. Invoicing & Payment Terms</a>
+                            <a href="#intellectual-property" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">6. Intellectual Property & Code</a>
+                            <a href="#revisions" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">7. Revisions & Change Requests</a>
+                            <a href="#timelines" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">8. Project Timelines & Delays</a>
+                            <a href="#deployment" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">9. Launch, Hosting & Warranty</a>
+                            <a href="#third-parties" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">10. Third-Party Integrations</a>
+                            <a href="#confidentiality" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">11. Confidentiality & NDA</a>
+                            <a href="#liability" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">12. Liability & Disclaimers</a>
+                            <a href="#termination" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">13. Project Termination</a>
+                            <a href="#governing-law" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">14. Dispute Resolution & Law</a>
+                            <a href="#contact-legal" class="toc-link block py-1.5 hover:text-brand-primary transition-colors">15. Contact Information</a>
+                        </nav>
+                        
+                        <div class="mt-8 pt-6 border-t border-[#333333]">
+                            <p class="text-[11px] text-gray-400 mb-3">Have questions regarding our service contracts?</p>
+                            <a href="https://wa.me/233530293161" class="w-full inline-flex items-center justify-center gap-2 bg-brand-primary text-brand-dark font-bold text-xs py-2.5 rounded-xl hover:bg-[#b5e600] transition-colors">
+                                <i class="fa-brands fa-whatsapp"></i> Chat with Legal / Support
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Legal Text Content -->
+                <div class="lg:col-span-8 space-y-12 text-gray-300 leading-relaxed font-normal">
+
+                    <!-- Section 1 -->
+                    <section id="overview" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">01</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Overview & Acceptance of Terms</h2>
+                        </div>
+                        <p class="mb-4">
+                            These Terms of Service ("Terms", "Agreement") constitute a legally binding contract between <strong class="text-white">TechLinks</strong> ("TechLinks", "TechLinksGH", "Agency", "we", "us", or "our") and the entity, individual, or business client ("Client", "you", or "your") accessing our website, contracting our services, or commissioning digital projects.
+                        </p>
+                        <p class="mb-4">
+                            By commissioning a project, accepting a formal proposal or invoice, paying an initial deposit, or utilizing our software, graphic design, mobile application, or digital maintenance services, you acknowledge that you have read, understood, and unconditionally agree to be bound by all terms, stipulations, and warranties set forth herein.
+                        </p>
+                        <div class="bg-brand-ash border-l-4 border-brand-primary p-4 rounded-r-xl text-sm text-gray-300 mt-6">
+                            <strong class="text-brand-primary block mb-1">Important Notice:</strong>
+                            If you are entering into this Agreement on behalf of a company, corporate enterprise, or other legal entity, you represent and warrant that you possess the full legal authority to bind said entity to these Terms.
+                        </div>
+                    </section>
+
+                    <!-- Section 2 -->
+                    <section id="services-scope" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">02</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Scope of Professional Services</h2>
+                        </div>
+                        <p class="mb-4">
+                            TechLinks operates as a specialized full-service digital agency delivering cutting-edge technical and creative solutions. Our core service categories encompass:
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-laptop-code text-brand-primary"></i> Website Development
+                                </h3>
+                                <p class="text-xs text-gray-400 leading-normal">Custom web applications, responsive websites, dynamic user interfaces, CMS setups (WordPress, headless CMS), corporate portals, and e-commerce platforms with secure payment gateways.</p>
+                            </div>
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-mobile-screen-button text-brand-primary"></i> Mobile App Development
+                                </h3>
+                                <p class="text-xs text-gray-400 leading-normal">Native and cross-platform mobile apps for iOS and Android utilizing modern frameworks (Flutter, React Native), backend API integrations, and App Store / Google Play submission assistance.</p>
+                            </div>
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-pen-nib text-brand-primary"></i> Graphic Design & Branding
+                                </h3>
+                                <p class="text-xs text-gray-400 leading-normal">Corporate visual identities, logo architecture, brand style guidelines, marketing collateral, social media assets, and high-fidelity UI/UX wireframing and prototyping.</p>
+                            </div>
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-wrench text-brand-primary"></i> Digital Maintenance & Retainers
+                                </h3>
+                                <p class="text-xs text-gray-400 leading-normal">Ongoing server and cloud management, regular security patches, bug fixes, performance audits, framework updates, database optimization, and technical retainer support.</p>
+                            </div>
+                        </div>
+                        <p class="text-sm">
+                            The exact deliverables, technical specifications, and project scope for each engagement will be detailed in the respective formal Project Proposal, Statement of Work (SOW), or Service Level Agreement (SLA).
+                        </p>
+                    </section>
+
+                    <!-- Section 3 -->
+                    <section id="proposals" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">03</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Estimates, Proposals & Scope Definition</h2>
+                        </div>
+                        <p class="mb-4">
+                            Prior to commencing project execution, TechLinks will issue a comprehensive Project Proposal or Quotation outlining the agreed-upon technical stack, target deliverables, project phases, payment schedule, and estimated delivery timeline.
+                        </p>
+                        <ul class="space-y-3 text-sm my-4 list-disc pl-5 text-gray-300">
+                            <li><strong class="text-white">Estimate Validity:</strong> Formal quotations and price estimates remain valid for a period of thirty (30) calendar days from the date of issuance unless explicitly stated otherwise in writing.</li>
+                            <li><strong class="text-white">Scope Boundaries:</strong> Any feature, functionality, design variation, or integration not explicitly enumerated in the written Statement of Work shall be deemed outside the project scope ("Out of Scope").</li>
+                            <li><strong class="text-white">Scope Creep Management:</strong> If the Client requests supplementary features or alterations exceeding the initial specification, TechLinks will issue a written Change Order detailing the additional fees and timeline extensions before proceeding with implementation.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 4 -->
+                    <section id="client-responsibilities" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">04</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Client Responsibilities & Obligations</h2>
+                        </div>
+                        <p class="mb-4">
+                            High-quality digital execution requires proactive collaboration. To ensure on-time and high-standard delivery, the Client agrees to:
+                        </p>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start gap-3 bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <i class="fa-solid fa-file-arrow-up text-brand-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-white block mb-0.5">Content & Asset Provision:</strong>
+                                    Provide all necessary raw text copy, high-resolution logos, brand assets, imagery, audio/video assets, and documentation within the timeline established in the project schedule.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <i class="fa-solid fa-key text-brand-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-white block mb-0.5">Access & Authorizations:</strong>
+                                    Supply verified administrative access to web hosting servers, domain registrars, database systems, third-party APIs, and app developer accounts as required for project deployment.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <i class="fa-solid fa-clock-rotate-left text-brand-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-white block mb-0.5">Timely Reviews & Approvals:</strong>
+                                    Review submitted milestones, design mockups, and staging builds within five (5) business days of submission. Unreasonable delays in feedback directly extend the project delivery timeline.
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <i class="fa-solid fa-shield-halved text-brand-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <strong class="text-white block mb-0.5">Content Legality & Rights:</strong>
+                                    Warrant that all materials, trademarks, copy, and media supplied to TechLinks are owned by the Client or legally licensed. Client assumes full liability for any copyright infringement arising from client-provided materials.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 5 -->
+                    <section id="payments" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">05</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Invoicing, Payment Terms & Overdue Accounts</h2>
+                        </div>
+                        <p class="mb-4">
+                            TechLinks adheres to transparent and structured milestone-based billing to ensure security and predictability for both parties.
+                        </p>
+                        <div class="space-y-3 text-sm my-4">
+                            <p><strong class="text-white">1. Deposit Requirement:</strong> Unless otherwise specified in a formal contract, a non-refundable upfront commitment deposit of <strong>50%</strong> of the total project value is required before project discovery, wireframing, or development initiates.</p>
+                            <p><strong class="text-white">2. Milestone Disbursements:</strong> Multi-phase development projects (e.g., full-stack software or mobile apps) may follow a 40% initial / 30% alpha staging / 30% pre-launch release structure as outlined in the SOW.</p>
+                            <p><strong class="text-white">3. Final Settlement:</strong> The remaining balance of the project fee must be paid in full prior to the release of source code repositories, migration to production servers, live domain point-over, or submission of apps to the Apple App Store and Google Play Store.</p>
+                            <p><strong class="text-white">4. Accepted Payment Channels:</strong> Payments may be remitted via Mobile Money (MTN MoMo, Telecel Cash, AT Money), direct Bank Wire Transfer, or authorized online payment gateways (such as Paystack, Stripe, or Flutterwave).</p>
+                            <p><strong class="text-white">5. Late Payments & Project Halts:</strong> Invoices not settled within seven (7) business days of issuance shall accrue late interest at 2.5% per month or the maximum rate permissible by law. TechLinks reserves the right to halt active work, withhold staging server access, or temporarily unpublish live assets until overdue balances are fully settled.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 6 -->
+                    <section id="intellectual-property" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">06</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Intellectual Property & Source Code Ownership</h2>
+                        </div>
+                        <p class="mb-4">
+                            The distribution of intellectual property rights upon completion of digital works is structured as follows:
+                        </p>
+                        <div class="space-y-4 text-sm">
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-1">Transfer of Final Deliverables</h3>
+                                <p class="text-gray-400">Upon receipt of 100% full and final payment for the project, TechLinks assigns and transfers to the Client all exclusive rights, title, and ownership of the customized design assets, brand logos, custom front-end styling, and bespoke application code authored exclusively for the project.</p>
+                            </div>
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-1">TechLinks Core Frameworks & Pre-Existing Code</h3>
+                                <p class="text-gray-400">TechLinks retains ownership of all pre-existing software routines, proprietary boilerplates, custom helper libraries, development scripts, and internal workflow tools ("Agency IP"). The Client is granted an irrevocable, perpetual, worldwide, non-exclusive license to utilize such Agency IP as integrated into the final deliverable.</p>
+                            </div>
+                            <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333]">
+                                <h3 class="font-bold text-white text-base mb-1">Portfolio & Promotional Rights</h3>
+                                <p class="text-gray-400">TechLinks reserves the right to display completed websites, mobile applications, case studies, design mockups, and client logos in our online portfolio, social media channels, award submissions, and marketing materials, unless a legally binding Non-Disclosure Agreement (NDA) prohibiting public display has been executed prior to project launch.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 7 -->
+                    <section id="revisions" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">07</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Revisions, Iterations & Scope Amendments</h2>
+                        </div>
+                        <p class="mb-4">
+                            We pride ourselves on crafting work that exceeds client expectations. To balance quality and development timelines, our standard project fee incorporates:
+                        </p>
+                        <ul class="space-y-3 text-sm my-4 list-disc pl-5 text-gray-300">
+                            <li><strong class="text-white">Design Revisions:</strong> Up to two (2) comprehensive rounds of feedback on UI/UX mockups, wireframes, and graphic design concepts prior to code implementation.</li>
+                            <li><strong class="text-white">Development Revisions:</strong> Up to two (2) rounds of functional refinements on staging environments to ensure alignment with the initial Statement of Work.</li>
+                            <li><strong class="text-white">Consolidated Feedback:</strong> The Client agrees to compile and deliver consolidated, clear, and actionable feedback per revision cycle rather than piecemeal daily requests.</li>
+                            <li><strong class="text-white">Excess Revisions:</strong> Revision requests exceeding the allotted rounds or demanding fundamental structural redesigns after prior milestone approval will be billed at TechLinks' standard hourly rate or through an approved Change Order.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 8 -->
+                    <section id="timelines" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">08</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Project Timelines & Client Inactivity Policy</h2>
+                        </div>
+                        <p class="mb-4">
+                            Project timelines provided by TechLinks are estimations based on past experience and current agency capacity. While we make every diligent effort to deliver before or on target dates, unforeseen technical complexities or third-party delays may occasionally affect schedules.
+                        </p>
+                        <div class="bg-brand-ash p-5 rounded-2xl border border-[#333333] my-4 text-sm">
+                            <h3 class="font-bold text-brand-primary text-base mb-2"><i class="fa-solid fa-hourglass-end mr-2"></i> Dormant Project Clause</h3>
+                            <p class="text-gray-300 mb-2">If a project is halted or delayed for more than <strong>twenty-one (21) consecutive days</strong> due to the Client's failure to provide essential assets, credentials, or milestone sign-offs, the project will be classified as "Dormant".</p>
+                            <p class="text-gray-400 text-xs">To reactivate a dormant project, the Client may be subject to a project restart fee (up to 15% of the total contract value) and the project will be rescheduled based on TechLinks' current active pipeline.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 9 -->
+                    <section id="deployment" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">09</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Launch, Hosting & Post-Launch Warranty</h2>
+                        </div>
+                        <p class="mb-4">
+                            Upon final approval and full settlement of invoices, TechLinks will execute the production launch, domain point-over, or mobile app distribution package handoff.
+                        </p>
+                        <div class="space-y-4 text-sm my-4">
+                            <div class="bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <strong class="text-brand-primary block mb-1"><i class="fa-solid fa-certificate mr-1"></i> Complimentary 30-Day Bug-Fix Warranty:</strong>
+                                TechLinks provides a thirty (30) day complimentary warranty commencing immediately upon the date of official production launch. During this period, TechLinks will resolve any technical defects, functional glitches, or rendering bugs that directly deviate from the original project specification at zero supplementary cost.
+                            </div>
+                            <div class="bg-brand-ash p-4 rounded-xl border border-[#333333]">
+                                <strong class="text-white block mb-1">Post-Warranty Maintenance:</strong>
+                                Following the expiration of the 30-day warranty, any requested feature additions, third-party plugin updates, server migrations, or troubleshooting will require an ongoing TechLinks Maintenance Retainer or will be billed at our prevailing standard support rates.
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Section 10 -->
+                    <section id="third-parties" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">10</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Third-Party Services, APIs & App Stores</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            Modern web and mobile software frequently rely on third-party cloud infrastructure, external APIs, hosting providers (e.g., Vercel, AWS, Cloudflare), payment gateways (Paystack, Stripe), SMS providers, and mobile application marketplaces (Apple App Store, Google Play Store).
+                        </p>
+                        <ul class="space-y-3 text-sm my-4 list-disc pl-5 text-gray-300">
+                            <li><strong class="text-white">App Store Approvals:</strong> While TechLinks adheres to all developer guidelines and standards, Apple and Google maintain sole and exclusive discretion over application acceptance. TechLinks cannot guarantee acceptance but will remedy code-level compliance rejections within the agreed project scope.</li>
+                            <li><strong class="text-white">Third-Party Outages & Fees:</strong> TechLinks is not responsible for service interruptions, rate changes, API deprecations, or outages originating from third-party vendors. All recurring third-party subscriptions and usage fees remain the direct financial obligation of the Client.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 11 -->
+                    <section id="confidentiality" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">11</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Confidentiality & Non-Disclosure</h2>
+                        </div>
+                        <p class="text-sm leading-relaxed">
+                            Both TechLinks and the Client mutually agree to safeguard all proprietary business information, client database records, technical documentation, business logic, passwords, and API credentials disclosed during the course of the project engagement. Neither party shall disclose or disseminate confidential data to third parties without prior written consent, except where required by lawful court order or regulatory authority.
+                        </p>
+                    </section>
+
+                    <!-- Section 12 -->
+                    <section id="liability" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">12</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Limitation of Liability & Disclaimers</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            To the maximum extent permitted under applicable law, TechLinks delivers all services, code, and design deliverables on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied.
+                        </p>
+                        <div class="space-y-3 text-sm text-gray-300 bg-brand-ash p-6 rounded-2xl border border-[#333333]">
+                            <p><strong class="text-white">No Consequential Damages:</strong> Under no circumstances shall TechLinks, its directors, developers, or affiliates be liable for any indirect, punitive, incidental, special, or consequential damages, including loss of profits, business revenue, lost data, cyber breaches caused by client-managed servers, or business interruptions.</p>
+                            <p><strong class="text-white">Liability Cap:</strong> In any circumstance, the maximum cumulative financial liability of TechLinks arising from or connected to this Agreement shall be strictly capped at the total monetary amount actually paid by the Client to TechLinks for the specific project or phase in dispute during the preceding three (3) months.</p>
+                        </div>
+                    </section>
+
+                    <!-- Section 13 -->
+                    <section id="termination" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">13</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Project Termination & Cancellation</h2>
+                        </div>
+                        <p class="mb-4 text-sm">
+                            Either party may terminate a project engagement by delivering a formal written notice with a minimum of seven (7) calendar days advance warning.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-300 list-disc pl-5">
+                            <li>In the event of client-initiated termination, the Client shall remain obligated to compensate TechLinks for all billable hours, completed milestones, and non-refundable third-party commitments incurred up to the date of notice.</li>
+                            <li>Initial deposits are non-refundable to cover discovery, architecture, and reservation of agency development capacity.</li>
+                            <li>Upon receipt of all accrued payments, TechLinks will deliver the current state of working files and assets to the Client.</li>
+                        </ul>
+                    </section>
+
+                    <!-- Section 14 -->
+                    <section id="governing-law" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">14</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Governing Law & Dispute Resolution</h2>
+                        </div>
+                        <p class="text-sm leading-relaxed mb-4">
+                            These Terms of Service and any project agreements shall be governed by, construed, and enforced in accordance with the substantive laws of the Republic of Ghana, without regard to its conflict of law principles.
+                        </p>
+                        <p class="text-sm leading-relaxed">
+                            In the event of any dispute, disagreement, or claim arising out of this Agreement, the parties agree to first seek an amicable and good-faith resolution through direct negotiation. Should informal discussions fail within thirty (30) days, the dispute shall be referred to binding arbitration or the competent commercial courts of Ghana.
+                        </p>
+                    </section>
+
+                    <!-- Section 15 -->
+                    <section id="contact-legal" class="legal-section bg-brand-dark border-2 border-[#333333] rounded-3xl p-8 md:p-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-8 h-8 rounded-lg bg-brand-primary text-brand-dark font-bold flex items-center justify-center text-sm">15</span>
+                            <h2 class="text-2xl md:text-3xl font-bold text-white">Contact & Inquiries</h2>
+                        </div>
+                        <p class="mb-6 text-sm">
+                            If you have any questions, contractual queries, or require clarification regarding our Terms of Service, please get in touch with our team:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="tel:+233530293161" class="flex items-center gap-4 bg-brand-ash p-4 rounded-2xl border border-[#333333] hover:border-brand-primary transition-colors">
+                                <div class="w-12 h-12 rounded-xl bg-brand-primary text-brand-dark flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-gray-400 block font-bold">Direct Phone</span>
+                                    <span class="text-sm text-white font-bold">+233 530 293 161</span>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/233530293161" class="flex items-center gap-4 bg-brand-primary p-4 rounded-2xl border border-brand-dark text-brand-dark hover:bg-[#b5e600] transition-colors">
+                                <div class="w-12 h-12 rounded-xl bg-brand-dark text-brand-primary flex items-center justify-center text-xl">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-brand-dark/80 block font-bold">Instant Messaging</span>
+                                    <span class="text-sm text-brand-dark font-bold">WhatsApp Business</span>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#111111] py-14 border-t-2 border-[#333333]">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Brand Col -->
+                <div class="md:col-span-2">
+                    <a href="index.html" class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-gear text-brand-primary"></i>
+                        <span>Tech<span class="text-brand-primary">Links.</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm font-medium leading-relaxed mb-6">
+                        Empowering forward-thinking brands and businesses with cutting-edge web development, mobile applications, bespoke graphic design, and reliable digital maintenance.
+                    </p>
+                    <div class="flex gap-4 text-gray-400">
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-xl bg-brand-dark border border-[#333333] flex items-center justify-center hover:text-brand-primary hover:border-brand-primary transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-medium">
+                        <li><a href="index.html#home" class="hover:text-brand-primary transition-colors">Home</a></li>
+                        <li><a href="index.html#services" class="hover:text-brand-primary transition-colors">Services</a></li>
+                        <li><a href="index.html#portfolio" class="hover:text-brand-primary transition-colors">Portfolio</a></li>
+                        <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Policies -->
+                <div>
+                    <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-4">Legal & Policies</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400 font-medium">
+                        <li><a href="terms.html" class="text-brand-primary font-semibold hover:underline">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-brand-primary transition-colors">Privacy Policy</a></li>
+                        <li><a href="refund.html" class="hover:text-brand-primary transition-colors">Refund Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-[#222222] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium text-center md:text-left">
+                <p>&copy; 2026 TECH LINKS. All rights reserved.</p>
+                <p>Digital Solutions for Ambitious Brands.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Sticky TOC highlight on scroll
+        const sections = document.querySelectorAll('.legal-section');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 140;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
